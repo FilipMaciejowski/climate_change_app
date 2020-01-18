@@ -1,0 +1,29 @@
+$main: #a9d2ff;
+
+
+.navigation_main {
+  background: url('../assets/global_warming_wall.jpg') no-repeat center center;
+  background-size: contain;
+  width: 100vw;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.navigation_btn {
+  margin: 10px;
+  border-radius: 15px;
+  box-shadow: 3px 3px 1px 0.5px darken($main, 20%);
+  border: red; 
+}
+
+
+.animated {
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-image: url('/final-project/public/assets/global_warming_wall.jpg');
+  width: 100vw;
+  height: 40vh;
+  background-color:#fff;
+}
