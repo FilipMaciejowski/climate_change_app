@@ -1,8 +1,7 @@
 import React from 'react';
-import { HashRouter as Router, Link} from 'react-router-dom';
-import Navigation from './menu/Navigation';
-import AnimatedBackground from './menu/AnimatedBackground';
+import { HashRouter as Router} from 'react-router-dom';
 
+import MainSection from './menu/MainSection';
 
 
 
@@ -10,8 +9,7 @@ const LandingPage = () => {
   return (
       <div className="landing_main">
         <Router>
-          <Navigation />
-          <AnimatedBackground />
+          <MainSection />
         </Router>
       </div>
   );

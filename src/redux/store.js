@@ -3,6 +3,7 @@ import thunk from 'redux-thunk';
 import locationReducer from './reducers';
 
 
+
  const rootreducer = combineReducers(
    {location: locationReducer}
  )
@@ -15,4 +16,4 @@ const store = createStore(
   )
 );
 
-export default store; 
+export default store ;

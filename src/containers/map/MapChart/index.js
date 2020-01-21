@@ -1,10 +1,11 @@
-import React, { memo } from "react";
+import React, { memo, useState } from "react";
 import {
   ZoomableGroup,
   ComposableMap,
   Geographies,
   Geography
 } from "react-simple-maps";
+import {Modal, Button} from 'antd';
 
 
 const geoUrl =
@@ -20,7 +21,41 @@ const rounded = num => {
   }
 };
 
-const MapChart = ({ setTooltipContent, addregion }) => {
+
+
+const MapChart = ({ setTooltipContent, addRegion }) => {
+
+  const [formOpen, setFormOpen] = useState(false); 
+
+  const openForm = (countryName, countryNameShorthand) => {
+    addRegion(countryNameShorthand, countryName);
+      setFormOpen(true);
+  };
+
+  const closeModal = () => {
+    setFormOpen(false);
+  }
+
+  const modal = <Modal
+          visible={formOpen}
+          title="Title"
+          footer={[
+            <Button key="back" onClick={closeModal}>
+              Cancel
+            </Button>,
+            <Button key="submit" type="primary" loading={true} 
+            >
+              Submit
+            </Button>,
+          ]}
+        >
+          <p>Some contents...</p>
+          <p>Some contents...</p>
+          <p>Some contents...</p>
+          <p>Some contents...</p>
+          <p>Some contents...</p>
+        </Modal>
+
   return (
     <>
       <ComposableMap data-tip="" projectionConfig={{ scale: 200 }}>
@@ -38,7 +73,9 @@ const MapChart = ({ setTooltipContent, addregion }) => {
                   onMouseLeave={() => {
                     setTooltipContent("");
                   }}
-                  onClick={() => addregion(geo.properties.iso_a2) }
+                  onClick={() =>
+                    openForm(geo.properties.NAME, geo.properties.ISO_A2)
+                  }
                   style={{
                     default: {
                       fill: "#D6D6DA",
@@ -59,6 +96,7 @@ const MapChart = ({ setTooltipContent, addregion }) => {
           </Geographies>
         </ZoomableGroup>
       </ComposableMap>
+      {modal}
     </>
   );
 };

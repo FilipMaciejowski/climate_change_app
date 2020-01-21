@@ -1,29 +1,39 @@
 $main: #a9d2ff;
 
-
-.navigation_main {
-  background: url('../assets/global_warming_wall.jpg') no-repeat center center;
-  background-size: contain;
+.landing_main {
+  margin: 0 auto;
   width: 100vw;
-  height: 60vh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
+  height: 100vh;
 }
 
-.navigation_btn {
-  margin: 10px;
-  border-radius: 15px;
-  box-shadow: 3px 3px 1px 0.5px darken($main, 20%);
-  border: red; 
+.main_section {
+  width: 100%;
+  height: 100%;
+  background-color: lightsteelblue;
+  float: left; 
 }
 
 
-.animated {
-  background-repeat: no-repeat;
-  background-size: auto;
-  background-image: url('/final-project/public/assets/global_warming_wall.jpg');
-  width: 100vw;
-  height: 40vh;
-  background-color:#fff;
+.main_section-buttons {
+  border: 2px solid red;  
+  display: inline-block;
 }
+
+.blob-1{
+  background-color: pink;
+  // background-image: linear-gradient(to right, #c79556, #a7a457, #80b06d, #52b891, #00bcba, #00bdc5, #00becf, #00bfd8, #00c1c4, #00c19e, #00bd67, #0cb613);
+}
+
+.wave {
+  width: 100%;
+  height: 100%;
+}
+
+.globe {
+ width: 600px;
+ height:600px; 
+}
+
+
+
+

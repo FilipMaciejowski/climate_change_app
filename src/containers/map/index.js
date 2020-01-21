@@ -5,7 +5,7 @@ import './style.scss';
 import { addRegion } from '../../redux/actions';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import store from '../../redux/store';
+
 
 
 
@@ -13,17 +13,16 @@ const MapPage = () => {
 
   const dispatch = useDispatch();
 
-  const { region } = useSelector(
-
+ useSelector(
     (store) => store.region,
-  )
+  );
 
   const [content, setContent] = useState("");
   return (
-    <div>
-      <MapChart addregion={(region)=>dispatch(addRegion(region))} setTooltipContent={setContent} />
-      <ReactTooltip>{content}</ReactTooltip>
-    </div>
+      <div>
+        <MapChart addRegion={(regionShortName, regionName) => dispatch(addRegion(regionShortName, regionName))} setTooltipContent={setContent} />
+        <ReactTooltip>{content}</ReactTooltip>
+      </div>
   );
 };
 
