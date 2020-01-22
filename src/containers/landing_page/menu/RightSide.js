@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 const RightSide = () => {
   return (
+    
       <section className="right-side">
         <h1>Climate's</h1>
         <br />
@@ -15,7 +16,7 @@ const RightSide = () => {
         <div className="main_section-buttons">
           <Link to="/story">
             <button href="#" className="navigation_btn-1">
-              story
+            story
             </button>
           </Link>
           <Link to="/map">
@@ -24,9 +25,8 @@ const RightSide = () => {
             </button>
           </Link>
         </div>
-      </section>
-      
-
+        
+</section>
   );
 };
 
