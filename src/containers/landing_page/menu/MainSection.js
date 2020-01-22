@@ -8,7 +8,7 @@ const MainSection = ({props}) => {
     <div className="main_section">
       <Blob
         className="blob-1"
-        size="80vh"
+        size="90vh"
         style={{
           position: "fixed",
           top: "-25%",

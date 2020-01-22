@@ -4,15 +4,14 @@ import { Link } from 'react-router-dom';
 
 const RightSide = () => {
   return (
-    <aside className="right-side">
-      
-      <section>
-        <h1>Climate's</h1> 
-        <br/>
-         <h1>stethoscope</h1>
-         <br/>
-         <p>Let's check us all up.</p><tr/>
-         <p>For better future of our planet.</p>
+      <section className="right-side">
+        <h1>Climate's</h1>
+        <br />
+        <h1>stethoscope</h1>
+        <br />
+        <p>Let's check us all up.</p>
+        <tr />
+        <p>For better future of our planet.</p>
         <div className="main_section-buttons">
           <Link to="/story">
             <button href="#" className="navigation_btn-1">
@@ -26,7 +25,7 @@ const RightSide = () => {
           </Link>
         </div>
       </section>
-    </aside>
+
   );
 };
 
