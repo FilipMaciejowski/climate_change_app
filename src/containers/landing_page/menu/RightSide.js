@@ -25,6 +25,7 @@ const RightSide = () => {
           </Link>
         </div>
       </section>
+      
 
   );
 };
