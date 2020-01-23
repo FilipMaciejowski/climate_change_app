@@ -1,2 +1,2 @@
-export const ADD_REGION = "ADD_REGION";
+export const ADD_COUNTRY = "ADD_COUNTRY";
 

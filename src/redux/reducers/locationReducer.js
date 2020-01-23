@@ -1,21 +1,21 @@
-import { ADD_REGION } from "../types";
+import { ADD_COUNTRY } from "../types";
 
 const initialState = {
-  region: {
-    currentRegionShortcut: '',
-    currentRegionName: ''
+  country: {
+    currentCountryShortcut: '',
+    currentCountryName: ''
   },
 };
 
 export const location = (state = initialState, action) => {
   switch (action.type) {
-    case `${ADD_REGION}`:
+    case `${ADD_COUNTRY}`:
       return {
         ...state,
-        region: {
+        country: {
           ...state.region,
-          currentRegionShortcut: action.payload.currentRegionShortcut,
-          currentRegionName: action.payload.currentRegionName
+          currentCountryShortcut: action.payload.currentCountryShortcut,
+          currentCountryName: action.payload.currentCountryName
         }
       };
     default:

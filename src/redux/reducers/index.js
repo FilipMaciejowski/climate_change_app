@@ -1,15 +1,15 @@
-import { ADD_REGION } from "../types";
+import { ADD_COUNTRY } from "../types";
 
 const initialState = {
-  currentRegion: ""
+  currentCountry: ""
 };
 
 const locationReducer = (state = initialState, action) => {
   switch (action.type) {
-    case `${ADD_REGION}`:
+    case `${ADD_COUNTRY}`:
       return {
         ...state,
-        currentRegion: action.payload
+        currentCountry: action.payload
       };
       default:
         return state;

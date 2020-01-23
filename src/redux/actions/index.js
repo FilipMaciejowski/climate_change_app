@@ -1,12 +1,16 @@
-import { ADD_REGION } from '../types';
+import { ADD_COUNTRY } from '../types';
+import ApiConst from '../../constans/api.constans';
 
-
-export const addRegion = (shortName, regionName) => {
+export const addCountry = (shortName, countryName) => {
   return {
-    type: ADD_REGION,
+    type: ADD_COUNTRY,
     payload: {
-      currentRegionName: regionName,
+      currentRegionName: countryName,
       currentRegionShortcut: shortName
     }
   }
 };
+
+export const fetchImages = (country) => {
+
+} 
