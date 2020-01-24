@@ -11,7 +11,6 @@ const RightSide = () => {
         <h1>stethoscope</h1>
         <br />
         <p>Let's check us all up.</p>
-        <tr />
         <p>For healthier future of our planet.</p>
         <div className="main_section-buttons">
           <Link to="/story">

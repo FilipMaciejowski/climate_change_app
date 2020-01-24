@@ -6,16 +6,17 @@ const initialState = {
     currentCountryName: ""
   },
   status: "",
-  location: []
+  location: [],
 };
 
 export const location = (state = initialState, action) => {
+  console.log(action);
   switch (action.type) {
     case `${ADD_COUNTRY}`:
       return {
         ...state,
         country: {
-          ...state.region,
+          ...state.country,
           currentCountryShortcut: action.payload.currentCountryShortcut,
           currentCountryName: action.payload.currentCountryName
         }

@@ -6,7 +6,7 @@ import {
   Geography
 } from "react-simple-maps";
 import {Modal, Button} from 'antd';
-import { addCountry } from "../../../redux/actions";
+
 
 
 const geoUrl =
@@ -24,17 +24,22 @@ const rounded = num => {
 
 
 
-const MapChart = ({ setTooltipContent, addRegion }) => {
+const MapChart = ({ setTooltipContent, addCountry, fetchImages }) => {
 
   const [formOpen, setFormOpen] = useState(false); 
 
   const openForm = (countryName, countryNameShorthand) => {
     addCountry(countryNameShorthand, countryName);
+    getImages(countryName);
       setFormOpen(true);
   };
 
   const closeModal = () => {
     setFormOpen(false);
+  }
+
+  const getImages = (country) => {
+    fetchImages(country);
   }
 
   const modal = <Modal

@@ -10,6 +10,7 @@ import axios from 'axios';
 
 
 export const addCountry = (shortName, countryName) => {
+  console.log("test", shortName, countryName);
   return {
     type: ADD_COUNTRY,
     payload: {
@@ -19,23 +20,26 @@ export const addCountry = (shortName, countryName) => {
   };
 };
 
+
 export const fetchImages = country => dispatch => {
-  /* dispatch({type: ADD_TEST_PENDING})
+  console.log(country);
+  dispatch({type: ADD_TEST_PENDING})
   axios.get(
       `${apiConst.imagesApiUrl}${apiConst.imagesApiKey}&q=landscape+nature+${country}&image_type=photo`
     )
     .then(res => {
-      return { type: ADD_TEST_FULLFILLED, payload: res };
+      console.log(res);
+      dispatch({ type: ADD_TEST_FULLFILLED, payload: res });
     })
     .catch(err => {
       return {type: ADD_TEST_REJECTED, payload: err}
     })
-    .finally(() => {}); */
+    .finally(() => {});
 
-  return {
+  /* return {
     type: ADD_TEST,
     payload: axios.get(
       `${apiConst.imagesApiUrl}${apiConst.imagesApiKey}&q=landscape+nature+${country}&image_type=photo`
     )
-  };
+  }; */
 };
