@@ -36,7 +36,6 @@ const LeftSide = () => {
         />
       </svg>
       <svg
-        height="800"
         preserveAspectRatio="none"
         fill="none"
         viewBox="0 0 2333 1080"

@@ -1,19 +1,19 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
-import locationReducer from './reducers';
-
+import { location } from './reducers/locationReducer';
+import promiseMiddleware from 'redux-promise-middleware';
 
 
  const rootreducer = combineReducers(
-   {location: locationReducer}
+   {location: location}
  )
 
 const store = createStore(
   rootreducer,
   compose(
-  applyMiddleware(thunk),
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    applyMiddleware(thunk, promiseMiddleware),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
   )
 );
 
-export default store ;
+export default store;

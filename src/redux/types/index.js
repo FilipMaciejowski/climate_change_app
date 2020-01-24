@@ -1,2 +1,8 @@
 export const ADD_COUNTRY = "ADD_COUNTRY";
+export const ADD_TEST = "ADD_TEST";
+export const ADD_TEST_PENDING = "ADD_TEST_PENDING";
+export const ADD_TEST_REJECTED = "ADD_TEST_REJECTED";
+export const ADD_TEST_FULLFILLED = "ADD_TEST_FULLFILLED";
+
+
 

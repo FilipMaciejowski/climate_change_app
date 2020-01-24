@@ -12,7 +12,7 @@ const RightSide = () => {
         <br />
         <p>Let's check us all up.</p>
         <tr />
-        <p>For better future of our planet.</p>
+        <p>For healthier future of our planet.</p>
         <div className="main_section-buttons">
           <Link to="/story">
             <button href="#" className="navigation_btn-1">
