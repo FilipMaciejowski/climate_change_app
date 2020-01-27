@@ -6,7 +6,7 @@ import { Blob } from "react-blob";
 const MainSection = ({props}) => {
   return (
     <div className="main_section">
-      <Blob
+      {/* <Blob
         className="blob-1"
         size="90vh"
         style={{
@@ -19,9 +19,10 @@ const MainSection = ({props}) => {
           fontSize: "10vh"
         }}
         {...props}
-      />
+      /> */}
       <RightSide />
       <LeftSide />
+
       <svg
         width="165"
         height="177"
@@ -56,7 +57,7 @@ const MainSection = ({props}) => {
         />
         <path
           d="M141.791 62.8053C145.905 62.8423 149.244 59.7081 149.249 55.8051C149.253 51.902 145.922 48.708 141.808 48.6713C137.694 48.6343 134.355 51.7682 134.35 55.6712C134.346 59.5743 137.677 62.7683 141.791 62.8053Z"
-          fill="#E1EFFB"
+          fill="#f1EFFB"
         />
       </svg>
     </div>

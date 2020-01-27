@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 
 const RightSide = () => {
   return (
-    
-      <section className="right-side">
-        <h1>Climate's</h1>
+    <section className="right-side">
+      <div className="main-text">
+        {/* <h1>Climate's</h1>
         <br />
         <h1>stethoscope</h1>
         <br />
@@ -23,9 +23,9 @@ const RightSide = () => {
               map
             </button>
           </Link>
-        </div>
-        
-</section>
+        </div> */}
+      </div>
+    </section>
   );
 };
 

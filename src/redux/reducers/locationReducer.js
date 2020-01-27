@@ -1,16 +1,16 @@
-import { ADD_COUNTRY, ADD_TEST } from "../types";
+import { ADD_COUNTRY, ADD_TEST, FETCH_INFO_ABOUT_COUNTRY} from "../types";
 
 const initialState = {
   country: {
     currentCountryShortcut: "",
-    currentCountryName: ""
+    currentCountryName: "",
+    details: {}
   },
   status: "",
-  location: [],
+  location: {},
 };
 
 export const location = (state = initialState, action) => {
-  console.log(action);
   switch (action.type) {
     case `${ADD_COUNTRY}`:
       return {
@@ -31,11 +31,30 @@ export const location = (state = initialState, action) => {
         ...state,
         status: "REJECTED"
       };
-    case `${ADD_TEST}_FULLFILLED`:
+    case `${ADD_TEST}_FULFILLED`:
       return {
         ...state,
-        status: "FULLFILLED",
+        status: "FULFILLED",
         location: action.payload
+      };
+    case `${FETCH_INFO_ABOUT_COUNTRY}_PENDING`:
+      return {
+        ...state,
+        status: "PENDING"
+      };
+    case `${FETCH_INFO_ABOUT_COUNTRY}_REJECTED`:
+      return {
+        ...state,
+        status: "REJECTED"
+      };
+    case `${FETCH_INFO_ABOUT_COUNTRY}_FULFILLED`:
+      return {
+        ...state,
+        status: "FULFILLED",
+        country: {
+          ...state.country,
+          details: action.payload
+        }
       };
 
     default:

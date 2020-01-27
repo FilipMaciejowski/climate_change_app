@@ -1,7 +1,8 @@
 import {
   ADD_COUNTRY,
   ADD_TEST,
-  ADD_TEST_FULLFILLED,
+  FETCH_INFO_ABOUT_COUNTRY,
+  ADD_TEST_FULFILLED,
   ADD_TEST_PENDING,
   ADD_TEST_REJECTED
 } from "../types";
@@ -10,36 +11,44 @@ import axios from 'axios';
 
 
 export const addCountry = (shortName, countryName) => {
-  console.log("test", shortName, countryName);
   return {
     type: ADD_COUNTRY,
     payload: {
-      currentRegionName: countryName,
-      currentRegionShortcut: shortName
+      currentCountryName: countryName,
+      currentCountryShortcut: shortName
     }
   };
 };
 
 
-export const fetchImages = country => dispatch => {
-  console.log(country);
-  dispatch({type: ADD_TEST_PENDING})
-  axios.get(
-      `${apiConst.imagesApiUrl}${apiConst.imagesApiKey}&q=landscape+nature+${country}&image_type=photo`
-    )
-    .then(res => {
-      console.log(res);
-      dispatch({ type: ADD_TEST_FULLFILLED, payload: res });
-    })
-    .catch(err => {
-      return {type: ADD_TEST_REJECTED, payload: err}
-    })
-    .finally(() => {});
+export const fetchImages = country => {
 
-  /* return {
+  // dispatch({type: ADD_TEST_PENDING})
+  // axios.get(
+  //     `${apiConst.imagesApiUrl}${apiConst.imagesApiKey}&q=landscape+nature+${country}&image_type=photo`
+  //   )
+  //   .then(res => {
+  //     console.log(res);
+  //     dispatch({ type: ADD_TEST_FULFILLED, payload: res });
+  //   })
+  //   .catch(err => {
+  //     return {type: ADD_TEST_REJECTED, payload: err}
+  //   })
+  //   .finally(() => {});
+
+  return {
     type: ADD_TEST,
     payload: axios.get(
       `${apiConst.imagesApiUrl}${apiConst.imagesApiKey}&q=landscape+nature+${country}&image_type=photo`
     )
-  }; */
+  };
+};
+
+export const fetchCountryData = country => {
+  return {
+    type: FETCH_INFO_ABOUT_COUNTRY,
+    payload: axios.get(
+      `${apiConst.infoAboutCountryApiUrl}${country}`
+    )
+  };
 };
