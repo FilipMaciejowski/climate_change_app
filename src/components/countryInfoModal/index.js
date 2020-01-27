@@ -59,6 +59,7 @@ const CountryInfoModal = ({ formOpen, country, closeModal, getImagesURL, status,
             getDetails={getDetails}
             status={currentStatus}
             details={country.details}
+            countryName={country.currentCountryName}
           />
         </TabPane>
         <TabPane tab="Charts" key="3">

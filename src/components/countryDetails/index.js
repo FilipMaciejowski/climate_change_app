@@ -1,14 +1,16 @@
 import React, {useEffect, useState} from 'react';
 import Loader from "../loader";
 import DisplayImages from "../displayImages";
+import { Collapse } from "antd";
+const { Panel } = Collapse; 
 
-const CountryDetails = ({ getDetails, status, details}) => {
+const CountryDetails = ({ getDetails, status, details, countryName}) => {
   const [currentStatus, setCurrentStatus] = useState(status);
   const [currentDetails, setCurrentDetails] = useState(details);
 
   useEffect(() => {
-    getDetails()
-  },[]);
+    getDetails();
+  }, [countryName]);
 
   useEffect(() => {
     setCurrentStatus(status);
@@ -18,27 +20,33 @@ const CountryDetails = ({ getDetails, status, details}) => {
     setCurrentDetails(details);
   }, [details]);
 
-
   return (
     <>
       {currentStatus === "FULFILLED" ? (
         <>
-          {currentDetails !== {} ? (
+          {currentDetails.data !== undefined ? (
             <div>
-              <p>tu będzie data ;)</p>
-
+              <Collapse accordion>
+                <Panel header="Flag" key="1">
+                  <img src={currentDetails.data[0].flag} alt="img"></img>
+                </Panel>
+                <Panel header="This is panel header 2" key="2">
+                  <p></p>
+                </Panel>
+                <Panel header="This is panel header 3" key="3">
+                  <p></p>
+                </Panel>
+              </Collapse>
             </div>
-            ) : (
-              <p>Images not found in database</p>
+          ) : (
+            <p>Images not found in database</p>
           )}
         </>
       ) : (
-        <Loader
-          minHeight={300}
-        />
+        <Loader minHeight={300} />
       )}
     </>
-  )
+  );
 };
 
 export default CountryDetails;
