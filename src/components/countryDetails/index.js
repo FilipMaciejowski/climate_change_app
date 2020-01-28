@@ -33,11 +33,13 @@ const CountryDetails = ({ status, details, getDetails }) => {
           {currentDetails.data !== undefined ? (
             <div>
               <Collapse accordion>
-                <Panel header="Flag" key="1">
+                <Panel className="country__flag" header="Flag" key="1">
                   <img src={currentDetails.data[0].flag} alt="img" />
                 </Panel>
                 <Panel header="Population" key="2">
-                  <p>{convertNumber(currentDetails.data[0].population, true)}</p>
+                  <p>
+                    {convertNumber(currentDetails.data[0].population, true)}
+                  </p>
                 </Panel>
                 <Panel header="Capital" key="3">
                   <p>{currentDetails.data[0].capital}</p>

@@ -35,14 +35,6 @@ const CountryInfoModal = ({ formOpen, country, closeModal, getImagesURL, status,
         <Button key="back" onClick={() => closeModal()}>
           Cancel
         </Button>,
-        <Button
-          key="submit"
-          type="primary"
-          loader={currentStatus}
-
-        >
-          Submit
-        </Button>
       ]}
     >
       <Tabs defaultActiveKey="1">
@@ -69,7 +61,7 @@ const CountryInfoModal = ({ formOpen, country, closeModal, getImagesURL, status,
             climateData={country.climate}
           />
         </TabPane>
-      </Tabs>,
+      </Tabs>
     </Modal>
   )
 };

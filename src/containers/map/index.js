@@ -48,7 +48,7 @@ const MapPage = () => {
   };
 
   return (
-      <div>
+      <div className="map__main">
         
         <MapRender
           setTooltipContent={setContent}

@@ -143,3 +143,47 @@ section p {
   font-size: 2rem;
   font-family: Lato;
 }
+
+
+// TABS-COLLAPSE
+
+
+
+.country__flag {
+
+   .ant-collapse-content-box {
+     display: flex;
+     justify-content: center;
+
+      img {
+         width: 50%;
+   }
+   }
+
+}
+
+.country__photo {
+  img {
+  width: 100%;
+  height: 100%; 
+  }
+
+  .slick-dots {
+   color: red;
+    .slick-active{
+      color: blue;
+    }
+  }
+}
+
+// MAP
+
+.map__main {
+  display: flex; 
+  justify-content: center;
+  svg {
+    width: 50%;
+    height: auto;
+    margin: 0 auto;
+  }
+}
