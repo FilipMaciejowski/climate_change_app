@@ -8,6 +8,9 @@
     "@testing-library/user-event": "^7.2.1",
     "antd": "^3.26.7",
     "axios": "^0.19.1",
+    "highcharts": "^8.0.0",
+    "highcharts-react-official": "^2.2.2",
+    "is-promise": "latest",
     "logger": "0.0.1",
     "node-sass": "^4.13.0",
     "prop-types": "^15.7.2",
@@ -23,8 +26,7 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
     "reset-css": "^5.0.1",
-    "styled-components": "^5.0.0",
-    "is-promise": "latest"
+    "styled-components": "^5.0.0"
   },
   "scripts": {
     "start": "cross-env AUTOPREFIXER_GRID=autoplace react-scripts start",

@@ -18,7 +18,7 @@ const MapRender = ({ setTooltipContent, openForm }) => {
                   setTooltipContent(`${NAME}`);
                 }}
                 onMouseLeave={() => { setTooltipContent("") }}
-                onClick={() => openForm(geo.properties.NAME, geo.properties.ISO_A2)
+                onClick={() => openForm(geo.properties.NAME, geo.properties.ISO_A2, geo.properties.ISO_A3)
                 }
                 style={{
                   default: {

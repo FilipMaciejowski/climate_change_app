@@ -2,20 +2,19 @@ import {
   ADD_COUNTRY,
   ADD_TEST,
   FETCH_INFO_ABOUT_COUNTRY,
-  ADD_TEST_FULFILLED,
-  ADD_TEST_PENDING,
-  ADD_TEST_REJECTED
+  FETCH_CLIMATE_DATA,
 } from "../types";
 import apiConst from '../../constans/api.constans';
 import axios from 'axios';
 
 
-export const addCountry = (shortName, countryName) => {
+export const addCountry = (shortName, countryName, countryNameIso3) => {
   return {
     type: ADD_COUNTRY,
     payload: {
       currentCountryName: countryName,
-      currentCountryShortcut: shortName
+      currentCountryShortcut: shortName,
+      currentCountryShortcutISO3: countryNameIso3
     }
   };
 };
@@ -49,6 +48,16 @@ export const fetchCountryData = country => {
     type: FETCH_INFO_ABOUT_COUNTRY,
     payload: axios.get(
       `${apiConst.infoAboutCountryApiUrl}${country}`
+    )
+  };
+};
+
+export const fetchClimateData = country => {
+  console.log('fetch')
+  return {
+    type: FETCH_CLIMATE_DATA,
+    payload: axios.get(
+      `${apiConst.climateDataApiUrl}${country}`
     )
   };
 };

@@ -4,10 +4,11 @@ import DisplayImages from "../displayImages";
 import Loader from "../loader";
 import { Tabs } from 'antd';
 import CountryDetails from "../countryDetails";
+import ClimateCharts from "../climateCharts";
 
 
 
-const CountryInfoModal = ({ formOpen, country, closeModal, getImagesURL, status, getDetails, activeTab }) => {
+const CountryInfoModal = ({ formOpen, country, closeModal, getImagesURL, status, getDetails, getClimateData }) => {
   const [currentStatus, setCurrentStatus] = useState(status);
   useEffect(() => {
     setCurrentStatus(status);
@@ -38,7 +39,7 @@ const CountryInfoModal = ({ formOpen, country, closeModal, getImagesURL, status,
           key="submit"
           type="primary"
           loader={currentStatus}
-          onClick={() => console.log(country.currentCountryName)}
+
         >
           Submit
         </Button>
@@ -56,14 +57,17 @@ const CountryInfoModal = ({ formOpen, country, closeModal, getImagesURL, status,
         </TabPane>
         <TabPane tab="Details" key="2">
           <CountryDetails
-            getDetails={getDetails}
             status={currentStatus}
             details={country.details}
-            countryName={country.currentCountryName}
+            getDetails={getDetails}
           />
         </TabPane>
         <TabPane tab="Charts" key="3">
-          Content of Tab Pane 3
+          <ClimateCharts
+            status={currentStatus}
+            getClimateData={getClimateData}
+            climateData={country.climate}
+          />
         </TabPane>
       </Tabs>,
     </Modal>

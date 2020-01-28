@@ -1,16 +1,16 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
-import thunk from 'redux-thunk';
+import { message } from "antd";
 import { location } from './reducers/locationReducer';
+import thunk from 'redux-thunk';
 import promiseMiddleware from 'redux-promise-middleware';
 import logger from 'redux-logger';
-import { message } from "antd";
 
 
- const rootReducer = combineReducers(
-   {
-     location: location
-   }
- );
+const rootReducer = combineReducers(
+ {
+   location: location
+ }
+);
 
 const errorHandler = store => next => action => {
   const actionType = action.type;

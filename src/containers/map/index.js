@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import ReactTooltip from 'react-tooltip';
-import './style.scss';
-import { addCountry, fetchCountryData, fetchImages } from '../../redux/actions';
-import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
+import { addCountry, fetchClimateData, fetchCountryData, fetchImages } from '../../redux/actions';
+import { useDispatch, useSelector } from 'react-redux';
 import MapRender from "../../components/mapRender";
 import CountryInfoModal from "../../components/countryInfoModal";
+import './style.scss';
 
 const MapPage = () => {
   const dispatch = useDispatch();
@@ -16,8 +15,8 @@ const MapPage = () => {
     (state) => state.location
   );
 
-  const openForm = (countryName, countryNameShorthand) => {
-    dispatch(addCountry(countryNameShorthand, countryName));
+  const openForm = (countryName, countryNameShorthand, countryNameIso3) => {
+    dispatch(addCountry(countryNameShorthand, countryName, countryNameIso3));
     getImages(countryName);
     setFormOpen(true);
   };
@@ -34,6 +33,10 @@ const MapPage = () => {
     dispatch(fetchCountryData(country.currentCountryName));
   };
 
+  const getClimateData = () => {
+    dispatch(fetchClimateData(country.currentCountryShortcutISO3));
+  };
+
   const getImagesURL = () => {
     const arrayURL = [];
     location.data.hits.forEach((img, index) => {
@@ -43,23 +46,25 @@ const MapPage = () => {
     });
     return arrayURL;
   };
-  const activeTab = () => '1';
 
   return (
       <div>
+        
         <MapRender
           setTooltipContent={setContent}
           openForm={openForm}
         />
-        <CountryInfoModal
-          formOpen={formOpen}
-          closeModal={closeModal}
-          country={country}
-          getImagesURL={getImagesURL}
-          status={status}
-          getDetails={getDetails}
-          activeTab={activeTab}
-        />
+        {formOpen === true &&
+          <CountryInfoModal
+            formOpen={formOpen}
+            closeModal={closeModal}
+            country={country}
+            getImagesURL={getImagesURL}
+            status={status}
+            getDetails={getDetails}
+            getClimateData={getClimateData}
+          />
+        }
         <ReactTooltip>
           {content}
         </ReactTooltip>

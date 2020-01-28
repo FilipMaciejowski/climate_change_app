@@ -1,16 +1,18 @@
 import React, {useEffect, useState} from 'react';
 import Loader from "../loader";
-import DisplayImages from "../displayImages";
 import { Collapse } from "antd";
-const { Panel } = Collapse; 
 
-const CountryDetails = ({ getDetails, status, details, countryName}) => {
+const { Panel } = Collapse;
+
+const CountryDetails = ({ status, details, getDetails }) => {
   const [currentStatus, setCurrentStatus] = useState(status);
   const [currentDetails, setCurrentDetails] = useState(details);
+  const units = [" milions", "k km2"];
 
   useEffect(() => {
     getDetails();
-  }, [countryName]);
+  }, []);
+
 
   useEffect(() => {
     setCurrentStatus(status);
@@ -20,6 +22,10 @@ const CountryDetails = ({ getDetails, status, details, countryName}) => {
     setCurrentDetails(details);
   }, [details]);
 
+  const convertNumber = (number, typeData) => {
+      return typeData ? Math.round(number / 100000) / 10 + units[0] : Math.round(number / 100) / 10 + units[1];
+    }
+  
   return (
     <>
       {currentStatus === "FULFILLED" ? (
@@ -28,13 +34,16 @@ const CountryDetails = ({ getDetails, status, details, countryName}) => {
             <div>
               <Collapse accordion>
                 <Panel header="Flag" key="1">
-                  <img src={currentDetails.data[0].flag} alt="img"></img>
+                  <img src={currentDetails.data[0].flag} alt="img" />
                 </Panel>
-                <Panel header="This is panel header 2" key="2">
-                  <p></p>
+                <Panel header="Population" key="2">
+                  <p>{convertNumber(currentDetails.data[0].population, true)}</p>
                 </Panel>
-                <Panel header="This is panel header 3" key="3">
-                  <p></p>
+                <Panel header="Capital" key="3">
+                  <p>{currentDetails.data[0].capital}</p>
+                </Panel>
+                <Panel header="Area" key="4">
+                  <p>{convertNumber(currentDetails.data[0].area, false)}</p>
                 </Panel>
               </Collapse>
             </div>
