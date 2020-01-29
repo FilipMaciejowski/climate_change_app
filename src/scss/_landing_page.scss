@@ -179,12 +179,25 @@ section p {
 // MAP
 
 .map__main {
-  display: flex; 
-  justify-content: center;
-  align-items: center;
-  svg {
-    width: 75%;
-    height: auto;
-    margin: 0;
+  .map__wrapper {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    svg {
+      width: 100%;
+      height: auto;
+      margin: 0 auto;
+    }
+    .search-input {
+      position: absolute;
+      left: 20%;
+      bottom: 50px;
+      width: 200px;
+      .ant-select {
+        width: 100%;
+      }
+    }
   }
 }
