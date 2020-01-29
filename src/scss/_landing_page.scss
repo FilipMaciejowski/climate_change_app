@@ -181,10 +181,10 @@ section p {
 .map__main {
   .map__wrapper {
     position: relative;
-    width: 100vw;
-    height: 100vh;
     display: flex;
     justify-content: center;
+    width: 100vw;
+    height: 100vh;
     svg {
       width: 100%;
       height: auto;
@@ -192,9 +192,10 @@ section p {
     }
     .search-input {
       position: absolute;
+      display: flex;
       left: 20%;
       bottom: 50px;
-      width: 200px;
+      width: 300px;
       .ant-select {
         width: 100%;
       }

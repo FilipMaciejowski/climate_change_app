@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState, useRef} from "react";
 import ReactTooltip from 'react-tooltip';
 import { addCountry, fetchClimateData, fetchCountryData, fetchImages } from '../../redux/actions';
 import { useDispatch, useSelector } from 'react-redux';
@@ -7,7 +7,7 @@ import CountryInfoModal from "../../components/countryInfoModal";
 import './style.scss';
 import data from '../../constans/mapData'
 
-const geoUrl = data;
+const geoData = data;
 
 
 const MapPage = () => {
@@ -15,13 +15,14 @@ const MapPage = () => {
   const [formOpen, setFormOpen] = useState(false);
   const [content, setContent] = useState("");
   const [countryNames, setCountryNames] = useState([]);
+  const mapRef = useRef();
 
   const { location, status, country } = useSelector(
     (state) => state.location
   );
 
   useEffect(() => {
-    setCountryNames(getCountryNames(geoUrl));
+    setCountryNames(getCountryNames(geoData));
   }, []);
 
   const openForm = (countryName, countryNameShorthand, countryNameIso3) => {
@@ -32,6 +33,8 @@ const MapPage = () => {
 
   const closeModal = () => {
     setFormOpen(false);
+    console.log('close')
+    mapRef.current.callResetData()
   };
 
   const getImages = country => {
@@ -68,9 +71,10 @@ const MapPage = () => {
       <div className="map__main">
         {countryNames.length > 0 &&
           <MapRender
+            ref={mapRef}
             setTooltipContent={setContent}
             openForm={openForm}
-            geoUrl={geoUrl}
+            geoData={geoData}
             countryNames={countryNames}
           />
         }

@@ -6,8 +6,8 @@ const DisplayImages = ({ locationArray }) => {
       <Carousel autoplay={true} dotPosition="top" >
         {locationArray.map(image => {
           return (
-            <div className="country__photo">
-              <img src={image} alt="img" key={image} />
+            <div className="country__photo" key={image}>
+              <img src={image} alt="img" />
             </div>
           );
         })}
