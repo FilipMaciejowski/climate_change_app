@@ -5,7 +5,7 @@ const geoUrl = "https://raw.githubusercontent.com/zcreativelabs/react-simple-map
 
 const MapRender = ({ setTooltipContent, openForm }) => {
   return (
-    <ComposableMap data-tip="" projectionConfig={{ scale: 200 }}>
+    <ComposableMap data-tip="" projectionConfig={{ scale: 150 }}>
       <ZoomableGroup>
         <Geographies geography={geoUrl}>
           {({ geographies }) =>

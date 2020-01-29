@@ -181,9 +181,10 @@ section p {
 .map__main {
   display: flex; 
   justify-content: center;
+  align-items: center;
   svg {
-    width: 50%;
+    width: 75%;
     height: auto;
-    margin: 0 auto;
+    margin: 0;
   }
 }
