@@ -4,28 +4,30 @@ import { Link } from 'react-router-dom';
 
 const RightSide = () => {
   return (
-    <section className="right-side">
-      <div className="main-text">
-        {/* <h1>Climate's</h1>
-        <br />
-        <h1>stethoscope</h1>
-        <br />
-        <p>Let's check us all up.</p>
-        <p>For healthier future of our planet.</p>
-        <div className="main_section-buttons">
+    <aside className="right__side">
+      <div className="right__side-content">
+        <div className="right__side-text">
+          <h1>Climate's</h1>
+          <br />
+          <h1>stethoscope</h1>
+          <br />
+          <p>Let's check us all up.</p>
+          <p>For healthier future of our planet.</p>
+        </div>
+        <div className="right__side-buttons">
           <Link to="/story">
-            <button href="#" className="navigation_btn-1">
-            story
+            <button href="#" className="right__side-btn1">
+              story
             </button>
           </Link>
           <Link to="/map">
-            <button href="#" className="navigation_btn-2">
+            <button href="#" className="right__side-btn2">
               map
             </button>
           </Link>
-        </div> */}
+        </div>
       </div>
-    </section>
+    </aside>
   );
 };
 

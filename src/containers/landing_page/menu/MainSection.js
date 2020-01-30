@@ -5,7 +5,7 @@ import { Blob } from "react-blob";
 
 const MainSection = ({props}) => {
   return (
-    <div className="main_section">
+    <div className="main__section">
       {/* <Blob
         className="blob-1"
         size="90vh"
@@ -23,7 +23,7 @@ const MainSection = ({props}) => {
       <RightSide />
       <LeftSide />
 
-      <svg
+      {/* <svg
         width="165"
         height="177"
         viewBox="0 0 165 177"
@@ -59,7 +59,7 @@ const MainSection = ({props}) => {
           d="M141.791 62.8053C145.905 62.8423 149.244 59.7081 149.249 55.8051C149.253 51.902 145.922 48.708 141.808 48.6713C137.694 48.6343 134.355 51.7682 134.35 55.6712C134.346 59.5743 137.677 62.7683 141.791 62.8053Z"
           fill="#f1EFFB"
         />
-      </svg>
+      </svg> */}
     </div>
   );
 };

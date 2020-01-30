@@ -2,7 +2,7 @@ import React from 'react';
 
 const LeftSide = () => {
   return (
-    <aside className="left-side">
+    <aside className="left__side">
       <svg
         preserveAspectRatio="xMaxYMid meet"
         viewBox="0 0 277 277"
