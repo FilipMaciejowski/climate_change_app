@@ -9,11 +9,8 @@ const RightSide = () => {
         <div className="right__side-text">
           <svg viewBox="0 0 240 80" className="main__text-svg">
             <title>Climate's stethoscope</title>
-  
             <text x="0" y="5" className="text-up">
-              
                 Climate´s
-            
             </text>
             <text x="0" y="40" className="text-up">
               stethoscope

@@ -4,7 +4,8 @@ import RightSide from '../menu/RightSide';
 
 import { Blob } from "react-blob"; 
 
-const MainSection = ({props}) => {
+const MainSection = ({setMode, switchValue}) => {
+  
   return (
     <div className="main__section">
       {/* <Blob
@@ -22,8 +23,8 @@ const MainSection = ({props}) => {
         {...props}
       /> */}
       <RightSide />
-      <LeftSide />
-     
+      <LeftSide switchValue={switchValue} setMode={setMode}/>
+      
     </div>
   );
 };

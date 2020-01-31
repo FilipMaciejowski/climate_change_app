@@ -1,6 +1,24 @@
-import React from 'react'; 
+import React, { useEffect, useState} from 'react'; 
+import { Switch } from 'antd';
 
-const LeftSide = () => {
+ 
+
+const LeftSide = ({setMode, switchValue}) => {
+
+const [currentSwitchValue, setCurrentSwitchValue] = useState(switchValue);
+useEffect(() => {
+setCurrentSwitchValue(switchValue)
+}, switchValue )
+
+
+
+
+
+  const darkChange = (mode) => {
+    localStorage.setItem('view', mode);
+    setMode();
+  }
+
   return (
     <aside className="left__side">
       <svg
@@ -41,7 +59,7 @@ const LeftSide = () => {
         fill="none"
         viewBox="0 0 2333 1080"
         xmlns="http://www.w3.org/2000/svg"
-        class="wave"
+        className="wave"
       >
         <path
           d="m533.2 7.6294e-6 66.65 25.725c66.65 25.725 199.95 77.025 133.3 128.78-66.65 51.225-333.25 102.75-466.55 153.75-133.3 51.75-133.3 103.5 44.572 154.5 176.21 51.525 534.45 102.75 688.58 154.5 154.13 51.3 112.47 102.75-44.572 154.5-155.38 51.075-421.98 102.75-377.41 153.75 42.906 51.675 401.15 102.75 577.36 129l177.87 25.5h-1333l-4.218e-7 -25.72c-4.218e-7 -25.73-1.2629e-6 -77.03-2.1114e-6 -128.78-8.4e-7 -51.225-1.6848e-6 -102.75-2.521e-6 -153.75-8.486e-7 -51.75-1.6971e-6 -103.5-2.5333e-6 -154.5-8.4487e-7 -51.525-1.6848e-6 -102.75-2.5333e-6 -154.5-8.4115e-7 -51.3-1.6848e-6 -102.75-2.5333e-6 -154.5-8.3747e-7 -51.075-1.6848e-6 -102.75-2.521e-6 -153.75-8.473e-7 -51.675-1.6848e-6 -102.75-2.1152e-6 -129l-4.1812e-7 -25.5 533.2-4.6242e-6z"
@@ -64,9 +82,9 @@ const LeftSide = () => {
             y2="680.93"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#93B0DC" stop-opacity=".52878" offset=".15081" />
-            <stop stop-color="#33B4BC" offset=".71973" />
-            <stop stop-color="#fff" stop-opacity="0" offset="1" />
+            <stop stopColor="#93B0DC" stopOpacity=".52878" offset=".15081" />
+            <stop stopColor="#33B4BC" offset=".71973" />
+            <stop stopColor="#fff" stopOpacity="0" offset="1" />
           </linearGradient>
           <linearGradient
             id="a"
@@ -76,19 +94,18 @@ const LeftSide = () => {
             y2="540"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#fff" offset="0" />
-            <stop stop-color="#fff" stop-opacity="0" offset=".22396" />
+            <stop stopColor="#fff" offset="0" />
+            <stop stopColor="#fff" stopOpacity="0" offset=".22396" />
           </linearGradient>
         </defs>
       </svg>
       <svg
-        
         viewBox="0 0 599 336"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         className="globe__sliced"
       >
-        <g clip-path="url(#clip0)">
+        <g clipPath="url(#clip0)">
           <path
             d="M303 489C426.159 489 526 391.174 526 270.5C526 149.826 426.159 52 303 52C179.84 52 80 149.826 80 270.5C80 391.174 179.84 489 303 489Z"
             fill="#1391EE"
@@ -121,6 +138,10 @@ const LeftSide = () => {
           </clipPath>
         </defs>
       </svg>
+      <Switch
+        defaultChecked={currentSwitchValue}
+        onChange={mode => darkChange(mode)}
+      />
     </aside>
   );
 }

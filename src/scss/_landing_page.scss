@@ -1,7 +1,15 @@
-.landing__main {
+@mixin changeMode {
   height: 100vh;
   width: 100vw;
+}
+.landing__main {
+  @include changeMode;
   background-color: darken($main-background, 10%);
+}
+
+.landing__main-dark {
+  @include changeMode;
+  background-color: darkblue;  
 }
 
 .main__section {
@@ -95,13 +103,7 @@
   z-index: 1;
 }
 
-.globe__sliced{
-  width: 100%;
-  height: 50%;
-  top: 65%;
-  left: 0;
-  position: fixed;
-}
+
 
 
 .stethoscope {
@@ -163,6 +165,9 @@
 // MAP
 
 .map__main {
+  position: relative;
+  top: 0;
+  left: 0;  
   .map__wrapper {
     position: relative;
     display: flex;
@@ -172,7 +177,7 @@
     svg {
       width: 100%;
       height: auto;
-      margin: 0 auto;
+     
     }
     .search-input {
       position: absolute;

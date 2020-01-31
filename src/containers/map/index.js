@@ -1,4 +1,5 @@
 import React, {useEffect, useState, useRef} from "react";
+import { Link } from 'react-router-dom';
 import ReactTooltip from 'react-tooltip';
 import { addCountry, fetchClimateData, fetchCountryData, fetchImages } from '../../redux/actions';
 import { useDispatch, useSelector } from 'react-redux';
@@ -67,31 +68,32 @@ const MapPage = () => {
   };
 
   return (
-      <div className="map__main">
-        {countryNames.length > 0 &&
-          <MapRender
-            ref={mapRef}
-            setTooltipContent={setContent}
-            openForm={openForm}
-            geoData={geoData}
-            countryNames={countryNames}
-          />
-        }
-        {formOpen === true &&
-          <CountryInfoModal
-            formOpen={formOpen}
-            closeModal={closeModal}
-            country={country}
-            getImagesURL={getImagesURL}
-            status={status}
-            getDetails={getDetails}
-            getClimateData={getClimateData}
-          />
-        }
-        <ReactTooltip>
-          {content}
-        </ReactTooltip>
-      </div>
+    <div className="map__main">
+      {countryNames.length > 0 && (
+        <MapRender
+          ref={mapRef}
+          setTooltipContent={setContent}
+          openForm={openForm}
+          geoData={geoData}
+          countryNames={countryNames}
+        />
+      )}
+      {formOpen === true && (
+        <CountryInfoModal
+          formOpen={formOpen}
+          closeModal={closeModal}
+          country={country}
+          getImagesURL={getImagesURL}
+          status={status}
+          getDetails={getDetails}
+          getClimateData={getClimateData}
+        />
+      )}
+      <ReactTooltip>{content}</ReactTooltip>
+      <Link className="map__home-btn" exact to="/">
+        <span>Home</span>
+      </Link>
+    </div>
   );
 };
 
