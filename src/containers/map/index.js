@@ -4,7 +4,6 @@ import { addCountry, fetchClimateData, fetchCountryData, fetchImages } from '../
 import { useDispatch, useSelector } from 'react-redux';
 import MapRender from "../../components/mapRender";
 import CountryInfoModal from "../../components/countryInfoModal";
-import './style.scss';
 import data from '../../constans/mapData'
 
 const geoData = data;

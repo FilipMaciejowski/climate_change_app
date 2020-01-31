@@ -1,0 +1,56 @@
+//MOBILE
+
+@media (max-width:450px){
+
+    .main__text-svg .text-up {
+      font-size: 1.5rem;
+      }
+    .wave {
+      visibility: hidden; 
+    }
+
+    .blob-1{
+      visibility: hidden;
+    }
+
+    .right__side-btn1, .right__side-btn2 {
+      visibility: hidden;
+    }
+
+   .globe {
+      visibility: hidden;
+    }
+
+    .main__section {
+      flex-direction: column; 
+    }
+
+    .left__side {
+      width: 100%;
+      order:2;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start; 
+    }
+
+    .right__side{
+      width: 100%;
+    }
+
+    .globe__sliced{
+      transform:scale(1.5);
+    }
+
+    .main__text-svg {
+      visibility: hidden;
+    }
+}
+
+
+//TABLETS
+@media(min-width:451px){
+  
+.globe__sliced{
+      visibility: hidden;
+    }
+}
