@@ -24,7 +24,7 @@ const CountryDetails = ({ status, details, getDetails }) => {
 
   const convertNumber = (number, typeData) => {
       return typeData ? Math.round(number / 100000) / 10 + units[0] : Math.round(number / 100) / 10 + units[1];
-    }
+  }
   
   return (
     <>

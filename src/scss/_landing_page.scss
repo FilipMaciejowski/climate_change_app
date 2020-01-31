@@ -9,7 +9,7 @@
 
 .landing__main-dark {
   @include changeMode;
-  background-color: darkblue;  
+  background-color: rgb(36, 36, 36)  
 }
 
 .main__section {
@@ -64,7 +64,7 @@
   height:100%;
   width: 100%;
   
-    .text-up{
+    .text-up {
       font-family: $main-text1;
       font-size: 2rem;
       text-anchor:start; 
@@ -73,9 +73,21 @@
     .text-down{
       font-family: $main-text1;
       font-size: 0.75rem;
-      fill: darken(grey, 20%);
+      fill: darken(grey, 25%);
+    }
+
+    .text-up-dark{
+      @extend .text-up;
+      fill:rgb(231, 230, 230);
+    }
+
+    .text-down-dark{
+      @extend .text-down;
+      fill: darken(grey, 2%);
     }
 }
+
+
 
 // SVG
 
@@ -91,7 +103,10 @@
   top: 0;
   left: 0;
   position: fixed; 
+  fill: red; 
 }
+
+
 
 .globe {
   position: fixed;
@@ -168,6 +183,7 @@
   position: relative;
   top: 0;
   left: 0;  
+  background-color: #1391EE; 
   .map__wrapper {
     position: relative;
     display: flex;

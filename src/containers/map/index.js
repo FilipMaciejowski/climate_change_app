@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useRef} from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Link } from 'react-router-dom';
 import ReactTooltip from 'react-tooltip';
 import { addCountry, fetchClimateData, fetchCountryData, fetchImages } from '../../redux/actions';
@@ -16,6 +16,7 @@ const MapPage = () => {
   const [content, setContent] = useState("");
   const [countryNames, setCountryNames] = useState([]);
   const mapRef = useRef();
+  const switchValue = localStorage.getItem("view") === 'true';
 
   const { location, status, country } = useSelector(
     (state) => state.location
@@ -33,7 +34,6 @@ const MapPage = () => {
 
   const closeModal = () => {
     setFormOpen(false);
-    console.log('close')
     mapRef.current.callResetData()
   };
 
@@ -69,15 +69,16 @@ const MapPage = () => {
 
   return (
     <div className="map__main">
-      {countryNames.length > 0 && (
+      
         <MapRender
           ref={mapRef}
           setTooltipContent={setContent}
           openForm={openForm}
           geoData={geoData}
           countryNames={countryNames}
+          switchValue={switchValue}
         />
-      )}
+    
       {formOpen === true && (
         <CountryInfoModal
           formOpen={formOpen}
@@ -90,7 +91,7 @@ const MapPage = () => {
         />
       )}
       <ReactTooltip>{content}</ReactTooltip>
-      <Link className="map__home-btn" exact to="/">
+      <Link className="map__home-btn" to="/">
         <span>Home</span>
       </Link>
     </div>

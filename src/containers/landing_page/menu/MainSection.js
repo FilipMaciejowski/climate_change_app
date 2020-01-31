@@ -4,11 +4,11 @@ import RightSide from '../menu/RightSide';
 
 import { Blob } from "react-blob"; 
 
-const MainSection = ({setMode, switchValue}) => {
+const MainSection = ({props, setMode, switchValue}) => {
   
   return (
     <div className="main__section">
-      {/* <Blob
+      <Blob
         className="blob-1"
         size="90vh"
         style={{
@@ -21,10 +21,9 @@ const MainSection = ({setMode, switchValue}) => {
           fontSize: "10vh"
         }}
         {...props}
-      /> */}
-      <RightSide />
-      <LeftSide switchValue={switchValue} setMode={setMode}/>
-      
+      />
+      <RightSide switchValue={switchValue} />
+      <LeftSide switchValue={switchValue} setMode={setMode} />
     </div>
   );
 };

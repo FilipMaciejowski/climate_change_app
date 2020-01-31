@@ -1,23 +1,14 @@
-import React, { useEffect, useState} from 'react'; 
+import React from 'react';
 import { Switch } from 'antd';
 
  
 
-const LeftSide = ({setMode, switchValue}) => {
+const LeftSide = ({ setMode, switchValue }) => {
 
-const [currentSwitchValue, setCurrentSwitchValue] = useState(switchValue);
-useEffect(() => {
-setCurrentSwitchValue(switchValue)
-}, switchValue )
-
-
-
-
-
-  const darkChange = (mode) => {
+  const darkChange = mode => {
     localStorage.setItem('view', mode);
     setMode();
-  }
+  };
 
   return (
     <aside className="left__side">
@@ -86,6 +77,31 @@ setCurrentSwitchValue(switchValue)
             <stop stopColor="#33B4BC" offset=".71973" />
             <stop stopColor="#fff" stopOpacity="0" offset="1" />
           </linearGradient>
+          {switchValue ? (
+            <linearGradient
+              id="a"
+              x1="1333"
+              x2="8.8542e-6"
+              y1="540"
+              y2="540"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stopColor="#fff" offset="0" />
+              <stop stopColor="#fff" stopOpacity="0" offset=".22396" />
+            </linearGradient>
+          ) : (
+            <linearGradient
+              id="a"
+              x1="1333"
+              x2="8.8542e-6"
+              y1="540"
+              y2="540"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stopColor="#fff" offset="0" />
+              <stop stopColor="#fff" stopOpacity="0" offset=".22396" />
+            </linearGradient>
+          )}
           <linearGradient
             id="a"
             x1="1333"
@@ -139,7 +155,7 @@ setCurrentSwitchValue(switchValue)
         </defs>
       </svg>
       <Switch
-        defaultChecked={currentSwitchValue}
+        defaultChecked={switchValue}
         onChange={mode => darkChange(mode)}
       />
     </aside>

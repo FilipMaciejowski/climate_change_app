@@ -5,7 +5,7 @@ import { AutoComplete, Button } from 'antd';
 import 'antd/dist/antd.css';
 
 
-const MapRender = forwardRef(({ setTooltipContent, openForm, geoData, countryNames }, ref) => {
+const MapRender = forwardRef(({ setTooltipContent, openForm, geoData, countryNames, themeMode }, ref) => {
   const [searchBtnDisabled, setSearchBtnDisabled] = useState(true);
   const [selectedCountry, setSelectedCountry] = useState('');
   const [currentChosenGeo, setCurrentChosenGeo] = useState({});
@@ -29,9 +29,9 @@ const MapRender = forwardRef(({ setTooltipContent, openForm, geoData, countryNam
   const setFillStyle = (geo) => {
     if (geo.properties.NAME === selectedCountry) {
       setCurrentChosenGeo(geo);
-      return "#F53"
+      return "f4806d";
     } else {
-      return "#D6D6DA"
+      return "48B19B";
     }
   };
 
@@ -43,6 +43,7 @@ const MapRender = forwardRef(({ setTooltipContent, openForm, geoData, countryNam
   };
 
   const setMapValues = (geographies) => {
+    console.log(themeMode, 'aaaaaaa')
     return geographies.map(geo => (
       <Geography
         key={geo.rsmKey}
@@ -51,15 +52,23 @@ const MapRender = forwardRef(({ setTooltipContent, openForm, geoData, countryNam
           const { NAME } = geo.properties;
           setTooltipContent(`${NAME}`);
         }}
-        onMouseLeave={() => { setTooltipContent("") }}
-        onClick={() => openForm(geo.properties.NAME, geo.properties.ISO_A2, geo.properties.ISO_A3)}
+        onMouseLeave={() => {
+          setTooltipContent("");
+        }}
+        onClick={() =>
+          openForm(
+            geo.properties.NAME,
+            geo.properties.ISO_A2,
+            geo.properties.ISO_A3
+          )
+        }
         style={{
           default: {
             fill: setFillStyle(geo),
             outline: "none"
           },
           hover: {
-            fill: "#F53",
+            fill: "f4806d",
             outline: "none"
           },
           pressed: {
@@ -68,7 +77,7 @@ const MapRender = forwardRef(({ setTooltipContent, openForm, geoData, countryNam
           }
         }}
       />
-    ))
+    ));
   };
 
   return (
