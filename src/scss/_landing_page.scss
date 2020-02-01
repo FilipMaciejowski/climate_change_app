@@ -23,7 +23,14 @@
 .left__side {
   order: 1; 
   height: 100%;
-  width: 50%; 
+  width: 50%;
+  position: relative; 
+    .switch__mode{
+      position: absolute;
+      top:2.5%;
+      left: 2.5%;
+      z-index:3;
+    }
 }
 .right__side {
   order: 2; 
@@ -46,7 +53,8 @@
           height: 75%;
           width: 100%; 
           display: flex; 
-          align-items: center; 
+          align-items: center;
+          position: relative;
       }
       .right__side-buttons {
         height: 25%;
@@ -94,7 +102,8 @@
 .blob-1{
   background-color:$blob-main;
   // background-image: linear-gradient(to right, #c79556, #a7a457, #80b06d, #52b891, #00bcba, #00bdc5, #00becf, #00bfd8, #00c1c4, #00c19e, #00bd67, #0cb613);
-  size: 20vh; 
+  width: 5%; 
+  height: 5%;
 }
 
 .wave {
@@ -103,7 +112,7 @@
   top: 0;
   left: 0;
   position: fixed; 
-  fill: red; 
+  fill: red;
 }
 
 
@@ -116,18 +125,40 @@
   width: 25%;
   height: 25%;
   z-index: 1;
+    .day-side{
+      fill: rgb(154, 231, 183);
+    }
+    .oceans-night{
+      fill: #234864;
+    }
+
+    .land-night{
+      fill: darken(#48B19B, 20%);
+    }
+
+    .land-day{
+      fill: #48B19B;
+    }
+}
+
+.moon {
+position: fixed;
+top: 25%;
+left: 30%;
+width: 10%;
+height: 10%;
+z-index:1;
 }
 
 
 
-
 .stethoscope {
-  position: absolute;
-  width: 150px;
-  height: 150px;
-  right: 200px;
-  top: 360px;
-  z-index: 2;
+  position: relative;
+  width: 30%;
+  height: 30%;
+  right: 15%;
+  top: -15%;
+  z-index: 1;
 }
 
 

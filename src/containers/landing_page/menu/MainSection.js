@@ -10,7 +10,7 @@ const MainSection = ({props, setMode, switchValue}) => {
     <div className="main__section">
       <Blob
         className="blob-1"
-        size="90vh"
+        size="75vh"
         style={{
           position: "fixed",
           top: "-25%",

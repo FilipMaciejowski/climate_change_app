@@ -108,7 +108,7 @@ const MapRender = forwardRef(({ setTooltipContent, openForm, geoData, countryNam
           disabled={searchBtnDisabled}
           onClick={() =>  openForm(currentChosenGeo.properties.NAME, currentChosenGeo.properties.ISO_A2, currentChosenGeo.properties.ISO_A3)}
         >
-          Open modal
+          Let's check
         </Button>
       </div>
     </div>
