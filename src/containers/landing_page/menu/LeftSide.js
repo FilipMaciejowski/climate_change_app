@@ -12,7 +12,7 @@ const LeftSide = ({ setMode, switchValue }) => {
 
   return (
     <aside className="left__side">
-      {switchValue && (
+      {switchValue && 
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480"
         className="moon">
           <defs />
@@ -96,7 +96,7 @@ const LeftSide = ({ setMode, switchValue }) => {
             d="M300.584 76.159a238.416 238.416 0 0142.589-9.867c-9.272-12.089-24.106-16.563-34.093-9.802-6.11 4.136-8.929 11.553-8.496 19.669z"
           />
         </svg>
-      )}
+}
       <svg
         preserveAspectRatio="xMaxYMid meet"
         viewBox="0 0 277 277"
@@ -105,7 +105,7 @@ const LeftSide = ({ setMode, switchValue }) => {
         className="globe"
       >
         <path
-          className={switchValue && "oceans-night"}
+          className={switchValue ? "oceans-night" : "oceans-day"}
           d="M138 276C214.215 276 276 214.215 276 138C276 61.7847 214.215 0 138 0C61.7847 0 0 61.7847 0 138C0 214.215 61.7847 276 138 276Z"
           fill="#1391EE" // oceans day
         />

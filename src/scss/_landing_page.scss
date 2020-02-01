@@ -138,16 +138,21 @@
 
     .land-day{
       fill: #48B19B;
+
+      
     }
 }
+
 
 .moon {
 position: fixed;
 top: 25%;
 left: 30%;
-width: 10%;
-height: 10%;
+width: 8.5%;
+height: 8.5%;
 z-index:1;
+transition: 1s; 
+transform: translate(20%, 5%);
 }
 
 

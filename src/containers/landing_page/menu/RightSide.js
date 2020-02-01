@@ -87,10 +87,20 @@ const RightSide = ({switchValue}) => {
         </div>
         {
           <div className="right__side-buttons">
-            <Link className="right__side-btn1" to="/story">
+            <Link
+              className={
+                switchValue ? "right__side-btn1-night" : "right__side-btn1"
+              }
+              to="/story"
+            >
               <span>story</span>
             </Link>
-            <Link className="right__side-btn2" to="/map">
+            <Link
+              className={
+                switchValue ? "right__side-btn2-night" : "right__side-btn2"
+              }
+              to="/map"
+            >
               <span>map</span>
             </Link>
           </div>
