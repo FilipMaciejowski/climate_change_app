@@ -1,12 +1,11 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Link } from 'react-router-dom';
 import ReactTooltip from 'react-tooltip';
-import { addCountry, fetchClimateData, fetchCountryData, fetchImages } from '../../redux/actions';
+import { addCountry, fetchClimateData, fetchCountryData, fetchImages, setTheme } from '../../redux/actions';
 import { useDispatch, useSelector } from 'react-redux';
 import MapRender from "../../components/mapRender";
 import CountryInfoModal from "../../components/countryInfoModal";
-import data from '../../constans/mapData';
-
+import data from '../../constans/mapData'
 
 const geoData = data;
 
@@ -17,15 +16,27 @@ const MapPage = () => {
   const [content, setContent] = useState("");
   const [countryNames, setCountryNames] = useState([]);
   const mapRef = useRef();
-  const switchValue = localStorage.getItem("view") === 'true';
 
-  const { location, status, country } = useSelector(
+  const { location, status, country, mode } = useSelector(
     (state) => state.location
   );
 
   useEffect(() => {
     setCountryNames(getCountryNames(geoData));
+    setStartTheme()
   }, []);
+
+
+  const setStartTheme = () => {
+    const currentHour = new Date().getHours();
+    if (mode === null) {
+      if(currentHour < 8 || currentHour > 19) {
+        dispatch(setTheme(true))
+      } else {
+        dispatch(setTheme(false))
+      }
+    }
+  };
 
   const openForm = (countryName, countryNameShorthand, countryNameIso3) => {
     dispatch(addCountry(countryNameShorthand, countryName, countryNameIso3));
@@ -70,16 +81,16 @@ const MapPage = () => {
 
   return (
     <div className="map__main">
-      
+      {countryNames.length > 0 && (
         <MapRender
           ref={mapRef}
           setTooltipContent={setContent}
           openForm={openForm}
           geoData={geoData}
           countryNames={countryNames}
-          switchValue={switchValue}
+          themeMode={mode}
         />
-    
+      )}
       {formOpen === true && (
         <CountryInfoModal
           formOpen={formOpen}
@@ -92,10 +103,29 @@ const MapPage = () => {
         />
       )}
       <ReactTooltip>{content}</ReactTooltip>
-      <a href="/" className="map__home-btn">
-        <div className="home-btn">
-        home icon
-        </div>
+      <a href="/" className="map__home-btn-wrapper">
+        <svg
+          
+          viewBox="0 0 83 83"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="map__home-btn"
+        >
+          <circle cx="41.5" cy="41.5" r="41.5" fill="#D9A0E2" />
+          <path d="M42 11L19 32.357V37V67H65V37V32.357L42 11Z" fill="#E7ECED" />
+          <path
+            d="M49 67H35V44.937C35 43.867 35.867 43 36.937 43H47.063C48.133 43 49 43.867 49 44.937V67Z"
+            fill="#6B5B4B"
+          />
+          <path d="M61 28.643V16H53V21.215L61 28.643Z" fill="#6C4127" />
+          <path
+            d="M14 37L42 11L70 37"
+            stroke="#6B5B4B"
+            stroke-width="2"
+            stroke-miterlimit="10"
+            stroke-linecap="round"
+          />
+        </svg>
       </a>
     </div>
   );

@@ -7,9 +7,9 @@ import logger from 'redux-logger';
 
 
 const rootReducer = combineReducers(
- {
-   location: location
- }
+  {
+    location: location
+  }
 );
 
 const errorHandler = store => next => action => {
@@ -17,10 +17,10 @@ const errorHandler = store => next => action => {
   const actionTypeStatus = actionType.substr(actionType.lastIndexOf("_") + 1);
 
   if (actionTypeStatus === "REJECTED") {
-   message.error("Error, try again later");
+    message.error("Error, try again later");
   } else if (actionTypeStatus === "FULFILLED") {
 
-   message.success("Data fetched");
+    message.success("Data fetched");
   }
   return next(action);
 };

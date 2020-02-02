@@ -59,6 +59,7 @@ const CountryInfoModal = ({ formOpen, country, closeModal, getImagesURL, status,
             status={currentStatus}
             getClimateData={getClimateData}
             climateData={country.climate}
+            countryName={country.currentCountryName}
           />
         </TabPane>
       </Tabs>

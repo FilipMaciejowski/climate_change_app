@@ -1,4 +1,4 @@
-import { ADD_COUNTRY, ADD_TEST, FETCH_INFO_ABOUT_COUNTRY, FETCH_CLIMATE_DATA} from "../types";
+import { ADD_COUNTRY, ADD_TEST, FETCH_INFO_ABOUT_COUNTRY, FETCH_CLIMATE_DATA, SET_MODE } from "../types";
 
 const initialState = {
   country: {
@@ -8,6 +8,7 @@ const initialState = {
     details: {},
     climate: {}
   },
+  mode: null,
   status: "",
   location: {},
 };
@@ -23,6 +24,11 @@ export const location = (state = initialState, action) => {
           currentCountryName: action.payload.currentCountryName,
           currentCountryShortcutISO3: action.payload.currentCountryShortcutISO3
         }
+      };
+    case `${SET_MODE}`:
+      return {
+        ...state,
+        mode: action.payload
       };
     case `${ADD_TEST}_PENDING`:
       return {

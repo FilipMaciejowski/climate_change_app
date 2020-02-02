@@ -11,9 +11,7 @@ const changeRoute = (route) => {
 };
 
 
-const changeRoute2 = () => {
-  history.push('/map');
-};
+
 
   return (
     <aside className="right__side">

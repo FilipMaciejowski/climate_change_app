@@ -17,10 +17,16 @@
   height: 100%;
   display: flex;
   .switch__mode{
+      height: auto;
+      width: auto;
       position: absolute;
       top:1rem;
       left:0.75rem;
       z-index:3;
+       .switch {
+         width: auto;
+         height: 100%;
+       }
     }
 }
 

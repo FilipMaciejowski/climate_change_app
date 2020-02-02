@@ -3,6 +3,7 @@ import {
   ADD_TEST,
   FETCH_INFO_ABOUT_COUNTRY,
   FETCH_CLIMATE_DATA,
+  SET_MODE
 } from "../types";
 import apiConst from '../../constans/api.constans';
 import axios from 'axios';
@@ -53,11 +54,17 @@ export const fetchCountryData = country => {
 };
 
 export const fetchClimateData = country => {
-  console.log('fetch')
   return {
     type: FETCH_CLIMATE_DATA,
     payload: axios.get(
       `${apiConst.climateDataApiUrl}${country}`
     )
+  };
+};
+
+export const setTheme = darkMode => {
+  return {
+    type: SET_MODE,
+    payload: darkMode
   };
 };

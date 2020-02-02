@@ -1,6 +1,5 @@
 import { ComposableMap, Geographies, Geography, ZoomableGroup } from "react-simple-maps";
-import React, { useState, forwardRef, useImperativeHandle } from "react";
-
+import React, { useState, forwardRef, useImperativeHandle, useEffect } from "react";
 import { AutoComplete, Button } from 'antd';
 import 'antd/dist/antd.css';
 
@@ -9,6 +8,26 @@ const MapRender = forwardRef(({ setTooltipContent, openForm, geoData, countryNam
   const [searchBtnDisabled, setSearchBtnDisabled] = useState(true);
   const [selectedCountry, setSelectedCountry] = useState('');
   const [currentChosenGeo, setCurrentChosenGeo] = useState({});
+  const [mapScale, setMapScale] = useState(200);
+
+
+useEffect(() => {
+  updateWidthMap();
+  window.addEventListener("resize", updateWidthMap);
+});
+
+const updateWidthMap = () => {
+  const width = window.innerWidth;
+  if (width >= 1530) {
+    setMapScale(200);
+  } else if (width < 1530 && width > 1300) {
+    setMapScale(180);
+  } else if (width <= 1300) {
+    setMapScale(160);
+  }
+};
+
+
 
   useImperativeHandle(ref, () => ({
     callResetData() {
@@ -81,38 +100,48 @@ const MapRender = forwardRef(({ setTooltipContent, openForm, geoData, countryNam
   };
 
   return (
-    <div className='map__wrapper'>
-      <ComposableMap data-tip="" projectionConfig={{ scale: 200 }}>
+    <div className="map__wrapper">
+      <ComposableMap data-tip="" projectionConfig={{ scale: mapScale }}>
         <ZoomableGroup>
           <Geographies geography={geoData}>
-            {({ geographies }) =>
-              setMapValues(geographies)
-            }
+            {({ geographies }) => setMapValues(geographies)}
           </Geographies>
         </ZoomableGroup>
       </ComposableMap>
-      <div className='search-input'>
+      <div className="search-input">
         <AutoComplete
           allowClear
           style={{ width: 200 }}
           dataSource={countryNames}
           placeholder="Search country"
           filterOption={(inputValue, option) =>
-            option.props.children.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1
+            option.props.children
+              .toUpperCase()
+              .indexOf(inputValue.toUpperCase()) !== -1
           }
-          onSelect={(selectedCountry) => { countrySelected(selectedCountry)} }
-          onChange={() => { onChangeSearchHandler()} }
+          onSelect={selectedCountry => {
+            countrySelected(selectedCountry);
+          }}
+          onChange={() => {
+            onChangeSearchHandler();
+          }}
         />
         <Button
           type="primary"
           disabled={searchBtnDisabled}
-          onClick={() =>  openForm(currentChosenGeo.properties.NAME, currentChosenGeo.properties.ISO_A2, currentChosenGeo.properties.ISO_A3)}
+          onClick={() =>
+            openForm(
+              currentChosenGeo.properties.NAME,
+              currentChosenGeo.properties.ISO_A2,
+              currentChosenGeo.properties.ISO_A3
+            )
+          }
         >
           Let's check
         </Button>
       </div>
     </div>
-  )
+  );
 });
 
 export default MapRender;

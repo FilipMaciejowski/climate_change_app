@@ -1,25 +1,38 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { HashRouter as Router} from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { setTheme } from '../../redux/actions';
 import MainSection from './menu/MainSection';
 
 const LandingPage = () => {
-  const [switchValue, setSwitchValue] = useState(localStorage.getItem("view") === 'true');
+  const dispatch = useDispatch();
+  const { mode } = useSelector(
+    (state) => state.location
+  );
 
   useEffect(() => {
-    setMode();
+    setStartTheme();
   });
 
-  const setMode = () => {
-    const viewValue = localStorage.getItem("view") === 'true';
-    if (viewValue !== null)  {
-      setSwitchValue(viewValue);
+  const setStartTheme = () => {
+    const currentHour = new Date().getHours();
+    if (mode === null) {
+      if(currentHour < 8 || currentHour > 19 ) {
+        dispatch(setTheme(true))
+      } else {
+        dispatch(setTheme(false))
+      }
     }
- };
+  };
+
+  const setMode = (newSwitchValue) => {
+    dispatch(setTheme(newSwitchValue));
+  };
 
   return (
-    <div className={switchValue ? "landing__main-dark" : "landing__main"}>
+    <div className={mode ? "landing__main-dark" : "landing__main"}>
       <Router>
-        <MainSection switchValue={switchValue} setMode={setMode}/>
+        <MainSection switchValue={mode} setMode={setMode}/>
       </Router>
     </div>
   );

@@ -37,17 +37,20 @@
   @extend .right__side-btn1-night;
 }
 
-.map__home-btn{
-  display: inline-block;
-  position: fixed;
-  top: 0;
-  left: 0; 
-  width: 4rem;
-  height: 2rem;
-  padding: 0;
-  margin: 2%; 
-  border: 1px solid red;
-  display: flex; 
-  justify-content: center; 
-  align-items: center; 
-}
+.map__home-btn-wrapper{
+  width: 2.5%;
+  height: 2.5%;
+  position: fixed; 
+  top:1rem;
+  left:1rem;
+  ;
+
+    .map__home-btn{
+      position: absolute;
+      top: 0;
+      left: 0; 
+      height: auto;
+      width: 100%;
+      cursor: pointer;
+    }
+  }
