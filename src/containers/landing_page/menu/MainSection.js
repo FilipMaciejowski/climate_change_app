@@ -9,7 +9,7 @@ const MainSection = ({props, setMode, switchValue}) => {
 
   const [blobScale, setBlobScale] = useState(75);
   const [blobPositionTop, setBlobPositionTop] = useState(-20)
-  const [blobPositionLeft, setBlobPositionLeft] = useState(-10);
+  const [blobPositionRight, setBlobPositionRight] = useState(-10);
   
   
   const darkChange = mode => {
@@ -27,15 +27,15 @@ const MainSection = ({props, setMode, switchValue}) => {
     if (width > 1800) {
       setBlobScale(82.5);
       setBlobPositionTop(-32.5);
-      /* setBlobPositionLeft(-10) */
+      
     } else if (width < 1800 && width > 1650) {
       setBlobScale(77);
       setBlobPositionTop(-25);
-      /* setBlobPositionLeft(-5); */
+
     } else if (width < 1650 && width > 1450) {
       setBlobScale(70);
       setBlobPositionTop(-22.5);
-      /* setBlobPositionLeft(0); */
+
     } else if (width < 1450 && width > 1250){
       setBlobScale(64);
       setBlobPositionTop(-20);
@@ -45,15 +45,15 @@ const MainSection = ({props, setMode, switchValue}) => {
     } else if (width < 1000 && width > 800){
       setBlobScale(47);
       setBlobPositionTop(-5);
-      setBlobPositionLeft(-11)
+      setBlobPositionRight(-11)
     } else if (width < 800 && width > 650){
       setBlobScale(43);
       setBlobPositionTop(-3);
-      setBlobPositionLeft(-15);
+      setBlobPositionRight(-15);
     } else if (width < 650 && width > 550){
       setBlobScale(41);
       setBlobPositionTop(-1);
-      setBlobPositionLeft(-21);
+      setBlobPositionRight(-21);
     }
   };
 
@@ -66,20 +66,22 @@ const MainSection = ({props, setMode, switchValue}) => {
   
   return (
     <div className="main__section">
-      <Blob
-        className="blob-1"
-        size={`${blobScale}vh`}
-        style={{
-          position: "fixed",
-          top: `${blobPositionTop}%`,
-          right: `${blobPositionLeft}%`,
-          zIndex: 1,
-          color: "white",
-          opacity: 0.7,
-          fontSize: "10vh"
-        }}
-        {...props}
-      />
+      <div className="blob">
+        <Blob
+          className="blob-1"
+          size={`${blobScale}vh`}
+          style={{
+            position: "fixed",
+            top: `${blobPositionTop}%`,
+            right: `${blobPositionRight}%`,
+            zIndex: 1,
+            color: "white",
+            opacity: 0.7,
+            fontSize: "10vh"
+          }}
+          {...props}
+        />
+      </div>
       <RightSide switchValue={switchValue} />
       <LeftSide switchValue={switchValue} setMode={setMode} />
       <div className="switch__mode">

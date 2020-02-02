@@ -111,11 +111,17 @@
 
 // SVG
 
+/* .blob{
+  position: fixed;
+  height:10%;
+  width: 10%;
+} */
+
 .blob-1{
   background-color:$blob-main;
   // background-image: linear-gradient(to right, #c79556, #a7a457, #80b06d, #52b891, #00bcba, #00bdc5, #00becf, #00bfd8, #00c1c4, #00c19e, #00bd67, #0cb613);
-  width: 5%; 
-  height: 5%;
+  /* height: 100%;
+  width: 100%; */
 }
 
 .wave {
