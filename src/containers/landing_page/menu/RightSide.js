@@ -1,10 +1,20 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 
 
 const RightSide = ({switchValue}) => {
   
+const history = useHistory();
+const changeRoute = (route) => {
+  history.push(route);
+};
+
+
+const changeRoute2 = () => {
+  history.push('/map');
+};
+
   return (
     <aside className="right__side">
       <div className="right__side-content">
@@ -80,22 +90,22 @@ const RightSide = ({switchValue}) => {
         </div>
         {
           <div className="right__side-buttons">
-            <Link
+            <button
               className={
                 switchValue ? "right__side-btn1-night" : "right__side-btn1"
               }
-              to="/story"
+              onClick={() => changeRoute("/story")}
             >
               <span>story</span>
-            </Link>
-            <Link
+            </button>
+            <button
               className={
                 switchValue ? "right__side-btn2-night" : "right__side-btn1"
               }
-              to="/map"
+              onClick={() => changeRoute("/map")}
             >
               <span>map</span>
-            </Link>
+            </button>
           </div>
         }
       </div>

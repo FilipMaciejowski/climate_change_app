@@ -92,12 +92,11 @@ const MapPage = () => {
         />
       )}
       <ReactTooltip>{content}</ReactTooltip>
-      <Link className="map__home-btn" to="/">
+      <a href="/" className="map__home-btn">
         <div className="home-btn">
-          
-
+        home icon
         </div>
-      </Link>
+      </a>
     </div>
   );
 };

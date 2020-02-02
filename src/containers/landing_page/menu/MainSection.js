@@ -11,6 +11,9 @@ const MainSection = ({props, setMode, switchValue}) => {
     localStorage.setItem("view", mode);
     setMode();
   };
+
+  const moonIcon = "🌙"; 
+  const sunIcon = "🌞";
   
   return (
     <div className="main__section">
@@ -34,6 +37,8 @@ const MainSection = ({props, setMode, switchValue}) => {
         <Switch
           defaultChecked={switchValue}
           onChange={mode => darkChange(mode)}
+          checkedChildren={sunIcon}
+          unCheckedChildren={moonIcon}
         />
       </div>
     </div>
