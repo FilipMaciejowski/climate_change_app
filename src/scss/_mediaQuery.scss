@@ -1,61 +1,73 @@
 //MOBILE
 
-@media (max-width:450px){
+@media (max-width:550px){
 
-    .main__text-svg .text-up {
-      font-size: 1.5rem;
-      }
-    .wave {
-      visibility: hidden; 
+  .main__text-svg .text-up {
+    font-size: 1.5rem;
     }
+  .wave, .wave-dark {
+    visibility: hidden; 
+  }
 
-    .blob-1{
-      visibility: hidden;
-    }
 
-    .right__side-btn1, .right__side-btn2 {
-      visibility: hidden;
-    }
+  .blob-1{
+    visibility: hidden;
+  }
 
-   .globe {
-      visibility: hidden;
-    }
+  .right__side-btn1, .right__side-btn2 {
+    visibility: hidden;
+  }
 
-    .main__section {
-      flex-direction: column; 
-    }
+  .globe {
+    visibility: hidden;
+  }
 
-    .left__side {
-      width: 100%;
-      order:2;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start; 
-    }
+  .main__section {
+    flex-direction: column; 
+  }
 
-    .right__side{
-      width: 100%;
-    }
+  .left__side {
+    width: 100%;
+    order:2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+  }
 
-    .globe__sliced{
-      width: 100%;
-      height: 100%;
-      top: 30%;
-      left: 0;
-      position: fixed;
-      transform:scale(1.75);
-    }
+  .right__side{
+    width: 100%;
+  }
 
-    .main__text-svg {
-      visibility: hidden;
-    }
+  .globe__sliced{
+    width: 100%;
+    height: 100%;
+    top: 30%;
+    left: 0;
+    position: fixed;
+    transform:scale(1.75);
+  }
+
+  .main__text-svg {
+    visibility: hidden;
+  }
+
+  .moon {
+    position: fixed;
+    top: 35%;
+    left: 7%;
+    width: 15%;
+    height: 15%;
+    z-index:1;
+    transition: 1s; 
+    
+  }
 }
 
 
 //TABLETS
-@media(min-width:451px){
+@media(min-width:550px){
 
 .globe__sliced{
-      visibility: hidden;
-    }
+    visibility: hidden;
+  }
 }

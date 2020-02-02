@@ -77,13 +77,6 @@ const RightSide = ({switchValue}) => {
               />
             </svg>
           </svg>
-
-          {/*     <h1>Climate's</h1>
-          <br />
-          <h1>stethoscope</h1>
-          <br />
-          <p>Let's check us all up.</p>
-          <p>For healthier future of our planet.</p> */}
         </div>
         {
           <div className="right__side-buttons">
@@ -97,7 +90,7 @@ const RightSide = ({switchValue}) => {
             </Link>
             <Link
               className={
-                switchValue ? "right__side-btn2-night" : "right__side-btn2"
+                switchValue ? "right__side-btn2-night" : "right__side-btn1"
               }
               to="/map"
             >

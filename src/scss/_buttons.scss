@@ -2,6 +2,7 @@
   height: 100px; 
   width: auto;
   display: flex;
+  justify-content: center;
   text-align: center;
   margin: 3rem 3rem 3rem 0;
 }
@@ -21,27 +22,7 @@
    margin: 5px;
    border-radius: 30%;
  }
- .right__side-btn1 span {
-   cursor: pointer;
-   display: inline-block;
-   position: relative;
-   transition: 0.1s;
- }
- .right__side-btn1:after {
-   content: '\00bb';
-   position: absolute;
-   opacity: 0;
-   top: 0;
-   right: -20px;
-   transition: 0.1s;
- }
- .right__side-btn1:hover span {
-   padding-right: 25px;
- }
- .right__side-btn1:hover span:after {
-   opacity: 1;
-   right: 0;
- }
+
 
  .right__side-btn1-night {
   @extend .right__side-btn1;

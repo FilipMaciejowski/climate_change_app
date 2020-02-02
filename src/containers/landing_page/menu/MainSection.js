@@ -1,10 +1,16 @@
 import React from "react";
 import LeftSide from  '../menu/LeftSide';
 import RightSide from '../menu/RightSide';
+import { Switch } from "antd";
 
 import { Blob } from "react-blob"; 
 
 const MainSection = ({props, setMode, switchValue}) => {
+
+  const darkChange = mode => {
+    localStorage.setItem("view", mode);
+    setMode();
+  };
   
   return (
     <div className="main__section">
@@ -24,6 +30,12 @@ const MainSection = ({props, setMode, switchValue}) => {
       />
       <RightSide switchValue={switchValue} />
       <LeftSide switchValue={switchValue} setMode={setMode} />
+      <div className="switch__mode">
+        <Switch
+          defaultChecked={switchValue}
+          onChange={mode => darkChange(mode)}
+        />
+      </div>
     </div>
   );
 };
