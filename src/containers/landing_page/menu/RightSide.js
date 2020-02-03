@@ -1,5 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 
@@ -11,7 +12,9 @@ const changeRoute = (route) => {
 };
 
 
-
+const changeRoute2 = () => {
+  history.push('/map');
+};
 
   return (
     <aside className="right__side">
@@ -86,8 +89,8 @@ const changeRoute = (route) => {
             </svg>
           </svg>
         </div>
-        {
-          <div className="right__side-buttons">
+
+        {/* <div className="right__side-buttons">
             <button
               className={
                 switchValue ? "right__side-btn1-night" : "right__side-btn1"
@@ -104,8 +107,63 @@ const changeRoute = (route) => {
             >
               <span>map</span>
             </button>
-          </div>
-        }
+          </div> */}
+        <div className="right__side-buttons">
+          {switchValue ? (
+            <button
+              className={"right__side-btn1-night"}
+              onClick={() => changeRoute("/map")}
+            >
+              Map
+              <span class="right__side-btn1-night__inner">
+                <span class="right__side-btn1-night__blobs">
+                  <span class="right__side-btn1-night__blob"></span>
+                  <span class="right__side-btn1-night__blob"></span>
+                  <span class="right__side-btn1-night__blob"></span>
+                  <span class="right__side-btn1-night__blob"></span>
+                </span>
+              </span>
+            </button>
+          ) : (
+            <button
+              className={"right__side-btn1"}
+              onClick={() => changeRoute("/map")}
+            >
+              Map
+              <span class="right__side-btn1__inner">
+                <span class="right__side-btn1__blobs">
+                  <span class="right__side-btn1__blob"></span>
+                  <span class="right__side-btn1__blob"></span>
+                  <span class="right__side-btn1__blob"></span>
+                  <span class="right__side-btn1__blob"></span>
+                </span>
+              </span>
+            </button>
+          )}
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          version="1.1"
+          width="0"
+          height="0"
+        >
+          <defs>
+            <filter id="goo">
+              <feGaussianBlur
+                in="SourceGraphic"
+                result="blur"
+                stdDeviation="10"
+              ></feGaussianBlur>
+              <feColorMatrix
+                in="blur"
+                mode="matrix"
+                values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7"
+                result="goo"
+              ></feColorMatrix>
+              <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
+            </filter>
+          </defs>
+        </svg>
       </div>
     </aside>
   );

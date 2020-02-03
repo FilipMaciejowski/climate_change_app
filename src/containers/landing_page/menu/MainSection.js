@@ -58,9 +58,6 @@ const MainSection = ({props, setMode, switchValue}) => {
   };
 
 
-
-
-
   const moonIcon = "🌙";
   const sunIcon = "🌞";
   
@@ -90,6 +87,7 @@ const MainSection = ({props, setMode, switchValue}) => {
           onChange={mode => darkChange(mode)}
           checkedChildren={sunIcon}
           unCheckedChildren={moonIcon}
+          size="large"
           className="switch"
         />
       </div>

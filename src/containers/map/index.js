@@ -104,28 +104,32 @@ const MapPage = () => {
       )}
       <ReactTooltip>{content}</ReactTooltip>
       <a href="/" className="map__home-btn-wrapper">
-        <svg
-          
-          viewBox="0 0 83 83"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="map__home-btn"
-        >
-          <circle cx="41.5" cy="41.5" r="41.5" fill="#D9A0E2" />
-          <path d="M42 11L19 32.357V37V67H65V37V32.357L42 11Z" fill="#E7ECED" />
-          <path
-            d="M49 67H35V44.937C35 43.867 35.867 43 36.937 43H47.063C48.133 43 49 43.867 49 44.937V67Z"
-            fill="#6B5B4B"
-          />
-          <path d="M61 28.643V16H53V21.215L61 28.643Z" fill="#6C4127" />
-          <path
-            d="M14 37L42 11L70 37"
-            stroke="#6B5B4B"
-            stroke-width="2"
-            stroke-miterlimit="10"
-            stroke-linecap="round"
-          />
-        </svg>
+        
+          {<svg
+
+            viewBox="0 0 83 83"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="map__home-btn"
+          >
+            <path
+              d="M42 11L19 32.357V37V67H65V37V32.357L42 11Z"
+              fill="#E7ECED"
+            />
+            <path
+              d="M49 67H35V44.937C35 43.867 35.867 43 36.937 43H47.063C48.133 43 49 43.867 49 44.937V67Z"
+              fill="#6B5B4B"
+            />
+            <path d="M61 28.643V16H53V21.215L61 28.643Z" fill="#6C4127" />
+            <path
+              d="M14 37L42 11L70 37"
+              stroke="#6B5B4B"
+              stroke-width="2"
+              stroke-miterlimit="10"
+              stroke-linecap="round"
+            />
+          </svg>}
+      
       </a>
     </div>
   );
