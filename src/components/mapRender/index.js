@@ -48,9 +48,9 @@ const updateWidthMap = () => {
   const setFillStyle = (geo) => {
     if (geo.properties.NAME === selectedCountry) {
       setCurrentChosenGeo(geo);
-      return "f4806d";
+      return "blue";
     } else {
-      return "48B19B";
+      return "lightblue";
     }
   };
 

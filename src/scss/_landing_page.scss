@@ -241,11 +241,12 @@ z-index:1;
   position: relative;
   top: 0;
   left: 0;  
-  background-color: #1391EE;
+  
   background: url('../assets/bg-gradient-wave.png') repeat center / cover;
   height: 100vh;
   width: 100vw;
-  
+
+
   .map__wrapper {
     position: relative;
     display: flex;
@@ -258,17 +259,17 @@ z-index:1;
      
     }
     .search-input {
-      position: absolute;
       display: flex;
-      left: 20%;
-      bottom: 50px;
+      position: fixed; 
+      top:90%;
+      left:1.5rem;
       width: 300px;
+      
       .ant-select {
         width: 100%;
       }
     }
   }
 }
-
 
 
