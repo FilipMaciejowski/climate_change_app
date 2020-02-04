@@ -81,6 +81,7 @@ const MapPage = () => {
 
   return (
     <div className="map__main">
+      
       {countryNames.length > 0 && (
         <MapRender
           ref={mapRef}
@@ -104,9 +105,8 @@ const MapPage = () => {
       )}
       <ReactTooltip>{content}</ReactTooltip>
       <a href="/" className="map__home-btn-wrapper">
-        
-          {<svg
-
+        {
+          <svg
             viewBox="0 0 83 83"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -128,8 +128,8 @@ const MapPage = () => {
               stroke-miterlimit="10"
               stroke-linecap="round"
             />
-          </svg>}
-      
+          </svg>
+        }
       </a>
     </div>
   );
