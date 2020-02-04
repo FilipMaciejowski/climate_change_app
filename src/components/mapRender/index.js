@@ -54,6 +54,14 @@ const updateWidthMap = () => {
     }
   };
 
+
+  const setMapFillStyle = () => {
+    if(themeMode){
+      return "grey";
+    } else {
+      return "rgb(83, 186, 255)";
+    }
+  }
   const onChangeSearchHandler = () => {
     if (!searchBtnDisabled) {
       setSearchBtnDisabled(true);
@@ -64,7 +72,7 @@ const updateWidthMap = () => {
   const setMapValues = (geographies) => {
     
     return geographies.map(geo => (
-      <Geography
+      <Geography 
         key={geo.rsmKey}
         geography={geo}
         onMouseEnter={() => {
@@ -87,7 +95,7 @@ const updateWidthMap = () => {
             outline: "none"
           },
           hover: {
-            fill: "rgb(110, 194, 250)",
+            fill: setMapFillStyle(),
             outline: "rgb(20, 154, 243)"
           },
           pressed: {
@@ -125,6 +133,9 @@ const updateWidthMap = () => {
           onChange={() => {
             onChangeSearchHandler();
           }}
+          dropdownMenuStyle={
+            themeMode ? { background: "lightblue" } : { background: "#6CB36E" }
+          }
         />
         <Button
           type="primary"

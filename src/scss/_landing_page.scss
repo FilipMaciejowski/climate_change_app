@@ -175,6 +175,9 @@ left: 30%;
 width: 8.5%;
 height: 8.5%;
 z-index:1;
+.light-effect:hover {
+  box-shadow: 4px 5px 38px 3px rgba(255,248,28,0.79)
+}
 }
 
 
@@ -241,7 +244,6 @@ z-index:1;
   position: relative;
   top: 0;
   left: 0;  
-  
   background: url('../assets/bg-gradient-wave.png') repeat center / cover;
   height: 100vh;
   width: 100vw;
@@ -264,7 +266,7 @@ z-index:1;
       top:90%;
       left:1.5rem;
       width: 300px;
-      
+
       .ant-select {
         width: 100%;
       }
@@ -273,3 +275,8 @@ z-index:1;
 }
 
 
+.map__main-dark {
+  @extend .map__main;
+  background: url('../assets/wave-darkmode.png') repeat center  / cover !important
+
+}

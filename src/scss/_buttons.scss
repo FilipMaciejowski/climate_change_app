@@ -70,7 +70,7 @@
 
  
 
-$color: rgb(0, 153, 255);
+$color: rgb(83, 186, 255);
 
 
   *, *:before, *:after {
@@ -288,4 +288,14 @@ $borderW: 6px;
     }
   }
   
+}
+
+.ant-select-auto-complete.ant-select .ant-input {
+background-color: white;
+border: 3 solid blue;
+
+}
+
+.ant-btn-primary{
+  background-color: lightpink;
 }

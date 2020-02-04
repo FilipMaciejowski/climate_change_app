@@ -80,18 +80,17 @@ const MapPage = () => {
   };
 
   return (
-    <div className="map__main">
-      
-      
-        <MapRender
-          ref={mapRef}
-          setTooltipContent={setContent}
-          openForm={openForm}
-          geoData={geoData}
-          countryNames={countryNames}
-          themeMode={mode}
-        />
-    
+    <div className={mode ? "map__main-dark" : "map__main"}>
+      {console.log(mode)}
+      <MapRender
+        ref={mapRef}
+        setTooltipContent={setContent}
+        openForm={openForm}
+        geoData={geoData}
+        countryNames={countryNames}
+        themeMode={mode}
+      />
+
       {formOpen === true && (
         <CountryInfoModal
           formOpen={formOpen}
@@ -104,7 +103,7 @@ const MapPage = () => {
         />
       )}
       <ReactTooltip>{content}</ReactTooltip>
-      <a href="/" className="map__home-btn-wrapper">
+      <Link to="/" className="map__home-btn-wrapper">
         {
           <svg
             viewBox="0 0 83 83"
@@ -130,7 +129,7 @@ const MapPage = () => {
             />
           </svg>
         }
-      </a>
+      </Link>
     </div>
   );
 };

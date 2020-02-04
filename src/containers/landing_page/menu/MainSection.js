@@ -82,6 +82,7 @@ const MainSection = ({props, setMode, switchValue}) => {
       <RightSide switchValue={switchValue} />
       <LeftSide switchValue={switchValue} setMode={setMode} />
       <div className="switch__mode">
+        {typeof switchValue === 'boolean' &&
         <Switch
           defaultChecked={switchValue}
           onChange={mode => darkChange(mode)}
@@ -90,6 +91,7 @@ const MainSection = ({props, setMode, switchValue}) => {
           size="large"
           className="switch"
         />
+}
       </div>
     </div>
   );
