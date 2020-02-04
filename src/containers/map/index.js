@@ -30,7 +30,7 @@ const MapPage = () => {
   const setStartTheme = () => {
     const currentHour = new Date().getHours();
     if (mode === null) {
-      if(currentHour < 8 || currentHour > 19) {
+      if(currentHour < 8 || currentHour > 16) {
         dispatch(setTheme(true))
       } else {
         dispatch(setTheme(false))
@@ -82,7 +82,7 @@ const MapPage = () => {
   return (
     <div className="map__main">
       
-      {countryNames.length > 0 && (
+      
         <MapRender
           ref={mapRef}
           setTooltipContent={setContent}
@@ -91,7 +91,7 @@ const MapPage = () => {
           countryNames={countryNames}
           themeMode={mode}
         />
-      )}
+    
       {formOpen === true && (
         <CountryInfoModal
           formOpen={formOpen}

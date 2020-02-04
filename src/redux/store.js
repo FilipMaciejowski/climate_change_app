@@ -18,9 +18,7 @@ const errorHandler = store => next => action => {
 
   if (actionTypeStatus === "REJECTED") {
     message.error("Error, try again later");
-  } else if (actionTypeStatus === "FULFILLED") {
-
-    message.success("Data fetched");
+  
   }
   return next(action);
 };

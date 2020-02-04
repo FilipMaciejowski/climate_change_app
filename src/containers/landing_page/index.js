@@ -17,7 +17,7 @@ const LandingPage = () => {
   const setStartTheme = () => {
     const currentHour = new Date().getHours();
     if (mode === null) {
-      if(currentHour < 8 || currentHour > 19 ) {
+      if(currentHour < 8 || currentHour > 16 ) {
         dispatch(setTheme(true))
       } else {
         dispatch(setTheme(false))

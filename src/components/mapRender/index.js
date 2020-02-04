@@ -48,7 +48,7 @@ const updateWidthMap = () => {
   const setFillStyle = (geo) => {
     if (geo.properties.NAME === selectedCountry) {
       setCurrentChosenGeo(geo);
-      return "blue";
+      return "rgb(0, 153, 255)";
     } else {
       return "lightblue";
     }
@@ -62,7 +62,7 @@ const updateWidthMap = () => {
   };
 
   const setMapValues = (geographies) => {
-    console.log(themeMode, 'aaaaaaa')
+    
     return geographies.map(geo => (
       <Geography
         key={geo.rsmKey}
@@ -87,11 +87,11 @@ const updateWidthMap = () => {
             outline: "none"
           },
           hover: {
-            fill: "f4806d",
-            outline: "none"
+            fill: "rgb(110, 194, 250)",
+            outline: "rgb(20, 154, 243)"
           },
           pressed: {
-            fill: "#E42",
+            fill: "rgb(20, 154, 243)",
             outline: "none"
           }
         }}
