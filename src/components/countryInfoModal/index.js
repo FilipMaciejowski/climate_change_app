@@ -8,7 +8,7 @@ import ClimateCharts from "../climateCharts";
 
 
 
-const CountryInfoModal = ({ formOpen, country, closeModal, getImagesURL, status, getDetails, getClimateData }) => {
+const CountryInfoModal = ({ formOpen, country, closeModal, getImagesURL, status, getDetails, getClimateData, mode }) => {
   const [currentStatus, setCurrentStatus] = useState(status);
   useEffect(() => {
     setCurrentStatus(status);
@@ -32,10 +32,11 @@ const CountryInfoModal = ({ formOpen, country, closeModal, getImagesURL, status,
       title={country.currentCountryName}
       onCancel={() => closeModal()}
       footer={[
-        <Button key="back" onClick={() => closeModal()}>
+        <button className="modal__btn" key="back" onClick={() => closeModal()}>
           Cancel
-        </Button>,
+        </button>,
       ]}
+      
     >
       <Tabs defaultActiveKey="1">
         <TabPane tab="Images" key="1">

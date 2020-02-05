@@ -81,7 +81,6 @@ const MapPage = () => {
 
   return (
     <div className={mode ? "map__main-dark" : "map__main"}>
-      {console.log(mode)}
       <MapRender
         ref={mapRef}
         setTooltipContent={setContent}
@@ -100,6 +99,7 @@ const MapPage = () => {
           status={status}
           getDetails={getDetails}
           getClimateData={getClimateData}
+          mode={mode}
         />
       )}
       <ReactTooltip>{content}</ReactTooltip>

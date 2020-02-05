@@ -57,7 +57,7 @@ const updateWidthMap = () => {
 
   const setMapFillStyle = () => {
     if(themeMode){
-      return "grey";
+      return "rgb(120, 130, 133)";
     } else {
       return "rgb(83, 186, 255)";
     }
@@ -134,10 +134,11 @@ const updateWidthMap = () => {
             onChangeSearchHandler();
           }}
           dropdownMenuStyle={
-            themeMode ? { background: "lightblue" } : { background: "#6CB36E" }
+            themeMode ? { background: "lightblue", font: "Lato" } : { background: "#AFE4E0" }
           }
         />
         <Button
+          className={themeMode ? "ant-btn-primary-dark" : "ant-btn-primary"}
           type="primary"
           disabled={searchBtnDisabled}
           onClick={() =>

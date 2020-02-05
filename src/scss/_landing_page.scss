@@ -93,29 +93,21 @@
     .text-down{
       font-family: $main-text1;
       font-size: 0.75rem;
-      fill: darken(grey, 25%);
+      fill: $grey-main;
     }
 
     .text-up-dark{
       @extend .text-up;
-      fill:rgb(231, 230, 230);
+      fill:$white-main;
     }
 
     .text-down-dark{
       @extend .text-down;
-      fill: darken(grey, 2%);
+      fill: $grey-main2;
     }
 }
 
-
-
 // SVG
-
-/* .blob{
-  position: fixed;
-  height:10%;
-  width: 10%;
-} */
 
 .blob-1{
   background-color:$blob-main;
@@ -138,7 +130,6 @@
   top: 0;
   left: 0;
   position: fixed; 
-  
 }
 
 
@@ -152,18 +143,18 @@
   height: 25%;
   z-index: 1;
     .day-side{
-      fill: rgb(154, 231, 183);
+      fill:$green-light1;
     }
     .oceans-night{
-      fill: #234864;
+      fill: $blue-dark1;
     }
 
     .land-night{
-      fill: darken(#48B19B, 20%);
+      fill: $green-light2;
     }
 
     .land-day{
-      fill: #48B19B;
+      fill:$green-light3;
     }
 }
 
@@ -179,8 +170,6 @@ z-index:1;
   box-shadow: 4px 5px 38px 3px rgba(255,248,28,0.79)
 }
 }
-
-
 
 .stethoscope {
   position: relative;
@@ -208,8 +197,6 @@ z-index:1;
 
 
 // TABS-COLLAPSE
-
-
 
 .country__flag {
 
@@ -277,6 +264,109 @@ z-index:1;
 
 .map__main-dark {
   @extend .map__main;
-  background: url('../assets/wave-darkmode.png') repeat center  / cover !important
+  background: url('../assets/wave-darkmode.png') repeat center  / cover;
 
+}
+
+
+// MODAL
+.ant-modal-content {
+  background-color:lighten(#42C3F7, 10%);
+  border: 5px solid darken(#42C3F7,30%);
+  .ant-modal-header{
+    background-color:darken(#AFE4E0, 10%);
+    border-radius: 0;
+    border-bottom: none;
+    
+    .ant-modal-title{
+      font-family: Lato;
+      letter-spacing: 1.5;
+      color: darken(#007572, 5%);
+      font-weight: 800;
+    }
+  }
+  
+  .ant-modal-body{
+    background-color:lighten(#42C3F7, 20%);
+  }
+  .ant-modal-footer{
+    background-color:lighten(#42C3F7, 20%);
+    border-top: none;
+  }
+}
+
+
+.ant-tabs-nav-scroll {
+  color: darken(#007572, 5%);
+  font-family: Lato;
+
+  
+}
+
+.ant-tabs-tab{
+      color: darken(#007572, 5%);
+      &:hover{
+        color: red; 
+      }
+    }
+
+.ant-tabs-ink-bar, .ant-tabs-ink-bar-animated {
+  background-color: lighten(#007572, 5%);
+}
+
+.ant-tabs-nav-scroll:after{
+  background-color: lighten(#007572, 25%);
+}
+
+.ant-tabs-line {
+  background-color: darken(#AFE4E0, 10%);
+  border-radius: 0px;
+  border: none;
+}
+
+
+
+.ant-collapse-icon-position-left {
+  /* border: 2px solid darken(#42C3F7,30%); */
+  border-radius: 0px;
+  border: 2px solid darken(#42C3F7,30%);
+
+  
+  .ant-collapse-item{
+    color: darken(#007572, 5%);
+    &:nth-child(4) > * {
+    border-bottom: none;
+  }
+  }
+  
+  .ant-collapse-content-active{
+    border: none; 
+    p {
+    font-family: Lato;
+    color: inherited;
+  }
+  }
+
+.ant-collapse-header{
+  border-radius: 0%;
+  border-bottom: 2px solid darken(#42C3F7,30%);
+  font-family: Lato;
+  color: darken(#007572, 5%);
+
+  &:nth-child(2){
+    border-bottom: none;
+  }
+
+  
+}
+    svg {
+      fill: lighten(#007572, 5%);
+    }
+  }
+
+
+
+.ant-tabs-tabpane, .ant-tabs-tabpane-active {
+  border: none;
+  border-radius: 0px;
 }
