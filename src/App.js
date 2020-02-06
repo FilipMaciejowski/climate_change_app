@@ -6,7 +6,6 @@ import Story from './containers/story/index';
 
 const App = () => {
   return (
-   
       <Router>
         <Switch>
           <Route exact path="/" component={LandingPage} />
@@ -15,7 +14,6 @@ const App = () => {
           <Redirect path="*" to="/" />
         </Switch>
       </Router>
-    
   );
 };
 
