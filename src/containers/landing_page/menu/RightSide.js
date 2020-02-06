@@ -20,31 +20,35 @@ const changeRoute2 = () => {
     <aside className="right__side">
       <div className="right__side-content">
         <div className="right__side-text">
+          <div className="main__text-mobile">
+            <h2>Climate's</h2>
+            <h3>stethoscope</h3>
+          </div>
           <svg viewBox="0 0 240 80" className="main__text-svg">
             <title>Climate's stethoscope</title>
             <text
-              x="0"
+              x="-1"
               y="5"
               className={switchValue ? "text-up-dark" : "text-up"}
             >
               Climate´s
             </text>
             <text
-              x="0"
+              x="-1"
               y="40"
               className={switchValue ? "text-up-dark" : "text-up"}
             >
               stethoscope
             </text>
             <text
-              x="0"
+              x="-1"
               y="70"
               className={switchValue ? "text-down-dark" : "text-down"}
             >
               Let´s check us all up.
             </text>
             <text
-              x="0"
+              x="-1"
               y="85"
               className={switchValue ? "text-down-dark" : "text-down"}
             >
@@ -90,24 +94,6 @@ const changeRoute2 = () => {
           </svg>
         </div>
 
-        {/* <div className="right__side-buttons">
-            <button
-              className={
-                switchValue ? "right__side-btn1-night" : "right__side-btn1"
-              }
-              onClick={() => changeRoute("/story")}
-            >
-              <span>story</span>
-            </button>
-            <button
-              className={
-                switchValue ? "right__side-btn2-night" : "right__side-btn1"
-              }
-              onClick={() => changeRoute("/map")}
-            >
-              <span>map</span>
-            </button>
-          </div> */}
         <div className="right__side-buttons">
           {switchValue ? (
             <button

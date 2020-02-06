@@ -2,9 +2,8 @@
   height: 100px; 
   width: auto;
   display: flex;
-  justify-content: center;
-  text-align: center;
-  
+  justify-content:flex-end;
+  align-items: center;
 }
 
 .right__side-btn1 {
@@ -19,23 +18,9 @@
    width: 200px;
    transition: all 0.1s;
    cursor: pointer;
-   margin: 5px;
    border-radius: 30%;
  }
 
-
- .right__side-btn1-night {
-  @extend .right__side-btn1;
-  background: rgb(62, 141, 51); 
-}
-
-.right__side-btn2 {
-  @extend .right__side-btn1;
-}
-
-.right__side-btn2-night {
-  @extend .right__side-btn1-night;
-}
 
 .map__home-btn-wrapper{
   width: 3.25rem;
@@ -189,6 +174,7 @@ $borderW: 6px;
   z-index: 1;
   position: relative;
   padding: 20px 46px;
+  width: 200px;
   margin-bottom: 30px;
   text-align: center;
   text-transform: uppercase;
