@@ -15,7 +15,7 @@ const MapPage = () => {
   const [formOpen, setFormOpen] = useState(false);
   const [content, setContent] = useState("");
   const [countryNames, setCountryNames] = useState([]);
-  const mapRef = useRef();
+  const mapRef = useRef(); //  useRef() from react anables to fire a function from a child component at the parents level
 
   const { location, status, country, mode } = useSelector(
     (state) => state.location

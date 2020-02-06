@@ -6,10 +6,7 @@
     font-size: 1.5rem;
     }
 
-  .main-text-svg .stethoscope {
-    display: block;
-  }
-
+  
   .wave, .wave-dark {
     display: none; 
   }
@@ -61,6 +58,10 @@
 
   .main__text-svg {
     display: none;
+  }
+
+  .main-text-svg .stethoscope {
+    display: block;
   }
 
   .moon {

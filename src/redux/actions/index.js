@@ -39,7 +39,7 @@ export const fetchImages = country => {
   return {
     type: ADD_TEST,
     payload: axios.get(
-      `${apiConst.imagesApiUrl}${apiConst.imagesApiKey}&q=landscape+nature+${country}&image_type=photo`
+      `${apiConst.imagesApiUrl}${apiConst.imagesApiKey}&q=landscape+nature+${country}&image_type=photo` // thanks to applyMiddleware we are able to put api request right into payload! 
     )
   };
 };
