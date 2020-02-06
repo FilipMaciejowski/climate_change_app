@@ -6,12 +6,16 @@
     font-size: 1.5rem;
     }
 
+  .main-text-svg .stethoscope {
+    display: block;
+  }
+
   .wave, .wave-dark {
-    visibility: hidden; 
+    display: none; 
   }
 
   .blob-1{
-    visibility: hidden;
+    display: none;
   }
 
     
@@ -27,7 +31,7 @@
   }
       
   .globe {
-    visibility: hidden;
+    display:none;
   }
 
   .main__section {
@@ -61,7 +65,7 @@
 
   .moon {
     position: fixed;
-    top: 35%;
+    top: 42.5%;
     left: 7%;
     width: 15%;
     height: 15%;
@@ -73,20 +77,40 @@
   .right__side-text{
     width: 10%;
     height: 10%;
+
+   
   }
+
 }
 
 
 //TABLETS
 @media(min-width:550px){
 
-.globe__sliced{
+.globe__sliced {
     display: none;
   }
 
-  .main__text-mobile > * {
-    width: 50%; 
-    height: 50%;
+[class^="main__text-mobile"]{
+  display: none;
+}
+
+
+
+/*   .main__text-mobile > * { 
     display: none;
   }
+
+  .main__text-mobile-dark > * {
+    display: none;
+}
+
+  .main__text-mobile-bottom > * {
+    display: none;
+  }
+
+  .main__text-mobile-bottom-dark > * {
+    display: none;
+  
+  } */
 }

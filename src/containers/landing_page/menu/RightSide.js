@@ -1,28 +1,41 @@
-import React from 'react';
-import { useHistory } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
+const RightSide = ({ switchValue }) => {
+  const history = useHistory();
+  const changeRoute = route => {
+    history.push(route);
+  };
 
-
-const RightSide = ({switchValue}) => {
-  
-const history = useHistory();
-const changeRoute = (route) => {
-  history.push(route);
-};
-
-
-const changeRoute2 = () => {
-  history.push('/map');
-};
+  const changeRoute2 = () => {
+    history.push("/map");
+  };
 
   return (
     <aside className="right__side">
       <div className="right__side-content">
         <div className="right__side-text">
-          <div className="main__text-mobile">
+          <div
+            className={
+              switchValue 
+              ? "main__text-mobile-dark" 
+              : "main__text-mobile"
+            }
+          >
             <h2>Climate's</h2>
-            <h3>stethoscope</h3>
+            <h2>stethoscope</h2>
+          </div>
+          <div
+            className={
+              switchValue
+                ? "main__text-mobile-bottom-dark"
+                : "main__text-mobile-bottom"
+            }
+          >
+            <h3>Let´s check us all up.</h3>
+            <h3>For healthier future of our planet</h3>
+
           </div>
           <svg viewBox="0 0 240 80" className="main__text-svg">
             <title>Climate's stethoscope</title>
