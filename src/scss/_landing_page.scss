@@ -9,7 +9,15 @@
 
 .landing__main-dark {
   @include changeMode;
-  background-color: rgb(36, 36, 36)  
+  /* animation: colorChange linear 2s; */
+  background-color: rgb(36, 36, 36); 
+}
+
+@keyframes colorChange{
+  10% {background-color: lighten($black, 60%);}
+  50% {background-color: lighten($black, 15%);}
+  75% {background-color: lighten($black, 10%);}
+  100% {background-color: $black;}
 }
 
 .main__section {
@@ -107,6 +115,14 @@
       fill: $grey-main2;
     }
 }
+
+
+.main__text-mobile{
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
 .main__text-mobile > * {
   font-family: $main-text1;
   color: $black;
@@ -115,22 +131,38 @@
   justify-content: center;
 }
 
-.main__text-mobile{
-  margin-bottom: 1rem;
-}
-
 .main__text-mobile-dark > * {
+  font-family: $main-text1;
   color:$white-main;
   font-size: 2rem;
   display: flex;
   justify-content: center;
-  font-family: $main-text1;
+  
 }
 
 .main__text-mobile-dark{
   margin-bottom: 1rem;
 }
 
+.main__text-mobile-text-up-container{
+  display: flex; 
+  position: relative;
+}
+
+.main__text-mobile-text-up{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main__text-mobile-text-up-dark > * {
+  color:$white-main;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 .main__text-mobile-bottom > * {
   font-family: $main-text1;
@@ -221,20 +253,19 @@ z-index:1;
   z-index: 1;
 }
 
+.stethoscope__mobile-container {
+  width: 27%;
+  height: 27%;
+  position: absolute;
+  top: 0.625rem;
+  left: 11rem;
 
-/* // FONTS
-
-.right__side-text h1 {
-  font-size: $main-text-size1;
-  font-weight: bold;
-  font-family: $main-text1;
+  .stethoscope__mobile{
+    width: 100;
+    height: auto;
+  }
 }
 
-.right__side-text p {
-  margin-top: 1rem;
-  font-size: $main-text-size1/3;
-  font-family: $main-text1;
-} */
 
 
 // TABS-COLLAPSE
@@ -302,6 +333,10 @@ z-index:1;
   }
 }
 
+[class^="ant-select"] > *{
+  font-family: $main-text1;
+}
+
 
 .map__main-dark {
   @extend .map__main;
@@ -310,102 +345,3 @@ z-index:1;
 }
 
 
-// MODAL
-.ant-modal-content {
-  background-color:lighten(#42C3F7, 10%);
-  border: 5px solid darken(#42C3F7,30%);
-  .ant-modal-header{
-    background-color:darken(#AFE4E0, 10%);
-    border-radius: 0;
-    border-bottom: none;
-    
-    .ant-modal-title{
-      font-family: Lato;
-      letter-spacing: 1.5;
-      color: darken(#007572, 5%);
-      font-weight: 800;
-    }
-  }
-  
-  .ant-modal-body{
-    background-color:lighten(#42C3F7, 20%);
-  }
-  .ant-modal-footer{
-    background-color:lighten(#42C3F7, 20%);
-    border-top: none;
-  }
-}
-
-
-.ant-tabs-nav-scroll {
-  color: darken(#007572, 5%);
-  font-family: Lato;
-
-  
-}
-
-.ant-tabs-tab{
-      color: darken(#007572, 5%);
-      &:hover{
-        color: red; 
-      }
-    }
-
-.ant-tabs-ink-bar, .ant-tabs-ink-bar-animated {
-  background-color: lighten(#007572, 5%);
-}
-
-.ant-tabs-nav-scroll:after{
-  background-color: lighten(#007572, 25%);
-}
-
-.ant-tabs-line {
-  background-color: darken(#AFE4E0, 10%);
-  border-radius: 0px;
-  border: none;
-}
-
-
-
-.ant-collapse-icon-position-left {
-  /* border: 2px solid darken(#42C3F7,30%); */
-  border-radius: 0px;
-  border: 2px solid darken(#42C3F7,30%);
-
-  
-  .ant-collapse-item{
-    color: darken(#007572, 5%);
-    &:nth-child(4) > * {
-    border-bottom: none;
-  }
-  }
-  
-  .ant-collapse-content-active{
-    border: none; 
-    p {
-    font-family: Lato;
-    color: inherited;
-  }
-  }
-
-.ant-collapse-header{
-  border-radius: 0%;
-  border-bottom: 2px solid darken(#42C3F7,30%);
-  font-family: Lato;
-  color: darken(#007572, 5%);
-
-  &:nth-child(2){
-    border-bottom: none;
-  }
-
-  
-}
-    svg {
-      fill: lighten(#007572, 5%);
-    }
-  }
-
-.ant-tabs-tabpane, .ant-tabs-tabpane-active {
-  border: none;
-  border-radius: 0px;
-}

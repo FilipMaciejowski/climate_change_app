@@ -76,12 +76,13 @@
   }
 
   .right__side-text{
-    width: 10%;
-    height: 10%;
-
-   
+    position: relative;
   }
 
+}
+
+[class*="btn1"]{
+  width: 17.5rem;
 }
 
 
@@ -95,6 +96,10 @@
 [class^="main__text-mobile"]{
   display: none;
 }
+  [class*="btn1"]{
+  width: 12.5rem;
+}
+
 
 
 
