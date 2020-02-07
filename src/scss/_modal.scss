@@ -99,6 +99,35 @@
   color: $dark-blue;
 }
 
+// TABS-COLLAPSE
+
+.country__flag {
+  .ant-collapse-content-box {
+    display: flex;
+    justify-content: center;
+
+    img {
+      width: 50%;
+    }
+  }
+}
+
+.country__photo {
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .slick-dots {
+    color: $wave-main;
+    .slick-active {
+      color: $blue;
+    }
+  }
+}
+
+
+
 // CHARTS
 
 .highcharts-container {
