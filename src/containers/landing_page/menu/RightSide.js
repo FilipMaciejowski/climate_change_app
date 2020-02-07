@@ -1,6 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import { Link } from "react-router-dom";
+
 
 const RightSide = ({ switchValue }) => {
   const history = useHistory();
@@ -8,9 +8,9 @@ const RightSide = ({ switchValue }) => {
     history.push(route);
   };
 
-  const changeRoute2 = () => {
+  /* const changeRoute2 = () => {
     history.push("/map");
-  };
+  }; */
 
   return (
     <aside className="right__side">
@@ -25,7 +25,7 @@ const RightSide = ({ switchValue }) => {
           >
           <div className="main__text-mobile-text-up-container">
           <div className={switchValue ? "main__text-mobile-text-up-dark" : "main__text-mobile-text-up"}>
-            <h2>Climate's</h2>
+            <h2>Climate´s</h2>
             <h2>stethoscope</h2>
             </div>
             <div className="stethoscope__mobile-container">

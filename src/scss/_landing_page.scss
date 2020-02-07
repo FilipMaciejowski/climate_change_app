@@ -7,16 +7,16 @@
 .landing__main {
   @include changeMode;
   background-color: darken($main-background, 10%);
-  /* animation: colorChangeDay 1.5s; */
+  animation: colorChangeDay 1s;
 }
 
 .landing__main-dark {
   @include changeMode;
   background-color: $main-dark;
-  /* animation: colorChangeDark 1.5s;*/
+  animation: colorChangeDark 1s;
 }
 
-/* @keyframes colorChangeDark {
+@keyframes colorChangeDark {
    from { background: darken($main-background, 10%) }
      to { background: $main-dark }
 }
@@ -25,7 +25,7 @@
    from { background:  $main-dark}
      to { background: darken($main-background, 10%)
  }
-} */
+}
 
 
 .main__section {
