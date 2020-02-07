@@ -2,6 +2,7 @@
   "name": "final-project",
   "version": "0.1.0",
   "private": true,
+  "home-page": "https://filipmaciejowski.github.io/Climate_Change_App",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",
@@ -27,12 +28,16 @@
     "redux-thunk": "^2.3.0",
     "reset-css": "^5.0.1",
     "styled-components": "^5.0.0"
+  
   },
   "scripts": {
     "start": "cross-env AUTOPREFIXER_GRID=autoplace react-scripts start",
     "build": "cross-env AUTOPREFIXER_GRID=autoplace react-scripts build",
     "test": "cross-env AUTOPREFIXER_GRID=autoplace react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+    
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -56,6 +61,7 @@
   "devDependencies": {
     "autoprefixer": "^9.7.4",
     "cross-env": "^7.0.0",
+    "gh-pages": "^2.2.0",
     "postcss-loader": "^3.0.0",
     "redux-promise-middleware": "^6.1.2",
     "style-loader": "^1.1.2",

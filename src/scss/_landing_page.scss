@@ -184,3 +184,12 @@
 }
 
 
+.landing__main-noAnim {
+  @include changeMode;
+  background-color: darken($main-background, 10%);
+}
+
+.landing__main-dark-noAnim {
+  @include changeMode;
+  background-color: $main-dark;
+}
