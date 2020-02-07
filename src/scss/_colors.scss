@@ -1,13 +1,26 @@
 // MAIN
 $main-background: #D5F1EF;
+$main-dark: rgb(36, 36, 36);
+
+$black: #212121;
+$black1:#333;
+$white: #fff; 
+$cyan: #76b1b6;
+$dark: rgb(104, 104, 104);
+$grey: #6d6d6d;
+$pink: rgb(238, 129, 129);
+$green-dark: rgb(75, 95, 75);
+$green: lighten(#007572, 5%);
+$green2: darken(#007572, 5%);
+$yellow: rgba(255, 248, 28, 0.79);
+$blue: rgb(0, 0, 255);
 
 
 // EFFECTS
 $blob-main:#a9d2ff;
-$wave-main: red; 
+$wave-main:#ff0000; 
 
 // SVG-TEXT
-
 $grey-main: darken(grey, 25%);
 $grey-main2: #6D6D6D;
 $white-main: rgb(231, 230, 230);
@@ -16,14 +29,18 @@ $white-main: rgb(231, 230, 230);
 $green-light1: rgb(154, 231, 183);
 $green-light2: darken(#48B19B, 20%);
 $green-light3: #48B19B;
-$black: #212121; 
-
-
 $blue-dark1: #234864;
+
+// MODAl & MAP 
+$light-blue: lighten(#42c3f7, 20%);
+$light-blue1: lighten(rgb(17, 180, 245),7.5%);
+$light-blue3: #42C3F7;
+$dark-blue: darken(#42c3f7, 30%);
+$black2:rgba(37, 37, 37, 0.418);
+
 
 
 //colors to pick
-
 $color-dark-mode1: #3a4042;
 $color-dark-mode2: #50717b;
 $color-dark-mode3: #3a4042;

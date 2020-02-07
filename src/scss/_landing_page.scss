@@ -2,122 +2,160 @@
   height: 100vh;
   width: 100vw;
 }
+
+
 .landing__main {
   @include changeMode;
   background-color: darken($main-background, 10%);
+  animation: colorChangeDay 1.5s;
 }
 
 .landing__main-dark {
   @include changeMode;
-  /* animation: colorChange linear 2s; */
-  background-color: rgb(36, 36, 36); 
+  background-color: $main-dark;
+  animation: colorChangeDark 1.5s;
+  
 }
 
-@keyframes colorChange{
-  10% {background-color: lighten($black, 60%);}
-  50% {background-color: lighten($black, 15%);}
-  75% {background-color: lighten($black, 10%);}
-  100% {background-color: $black;}
+@keyframes colorChangeDark {
+   from { background: darken($main-background, 10%) }
+     to { background: $main-dark }
 }
+
+@keyframes colorChangeDay {
+   from { background:  $main-dark}
+     to { background: darken($main-background, 10%)
+ }
+}
+
+/* @keyframes colorChangeDark {
+
+  -10% {background-color: $main-dark}
+
+  10% {
+    background-color: lighten($black, 60%);
+  }
+  50% {
+    background-color: lighten($black, 15%);
+  }
+  75% {
+    background-color: lighten($black, 10%);
+  }
+  100% {
+    background-color: $main-dark;
+  }
+}
+
+@keyframes colorChangeDay {
+
+  0% {background-color:  #D5F1EF}
+
+  10% {
+    background-color: darken(darken($main-background, 10%), 10%);
+  }
+  50% {
+    background-color: darken(darken($main-background, 10%), 25%);
+  }
+  75% {
+    background-color: darken(darken($main-background, 10%), 60%);
+  }
+  100% {
+    background-color:  #D5F1EF;
+  }
+} */
 
 .main__section {
   width: 100%;
   height: 100%;
   display: flex;
-    .switch__mode{
-        height: auto;
-        width: auto;
-        position: absolute;
-        top:1rem;
-        left:0.75rem;
-        z-index:3;
-        .switch {
-          width: auto;
-          height: 100%;
-        }
-      }
+  .switch__mode {
+    height: auto;
+    width: auto;
+    position: absolute;
+    top: 1rem;
+    left: 0.75rem;
+    z-index: 3;
+    .switch {
+      width: auto;
+      height: 100%;
+    }
+  }
 }
 
 // SIDES
 
 .left__side {
-  order: 1; 
+  order: 1;
   height: 100%;
   width: 50%;
-  position: relative; 
-    
+  position: relative;
 }
 .right__side {
-  order: 2; 
+  order: 2;
   height: 100%;
-  width: 50%; 
+  width: 50%;
   z-index: 2;
   display: flex;
   justify-content: center;
-  align-items: center; 
-    .right__side-content {
+  align-items: center;
+  .right__side-content {
+    height: 75%;
+    width: 100%;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .right__side-text {
       height: 75%;
       width: 100%;
       display: flex;
-      margin: 0;
-      padding: 0;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      
-     
-        .right__side-text{
-          height: 75%;
-          width: 100%; 
-          display: flex; 
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          
-          
-      }
-      .right__side-buttons {
-        height: 25%;
-        width: 100%; 
-        display: flex; 
-        flex-wrap: wrap;
-        align-items: flex-start;
-        justify-content: flex-start;
-        padding: 0; 
-        margin: 0; 
-      }
-    } 
+      justify-content: center;
+    }
+    .right__side-buttons {
+      height: 25%;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding: 0;
+      margin: 0;
+    }
+  }
 }
 
 .main__text-svg {
-  height:100%;
+  height: 100%;
   width: 100%;
-  
-    .text-up {
-      font-family: $main-text1;
-      font-size: 2rem;
-      text-anchor:start; 
-      
-    }
-    .text-down{
-      font-family: $main-text1;
-      font-size: 0.75rem;
-      fill: $grey-main;
-    }
 
-    .text-up-dark{
-      @extend .text-up;
-      fill:$white-main;
-    }
+  .text-up {
+    font-family: $main-text1;
+    font-size: 2rem;
+    text-anchor: start;
+  }
+  .text-down {
+    font-family: $main-text1;
+    font-size: 0.75rem;
+    fill: $grey-main;
+  }
 
-    .text-down-dark{
-      @extend .text-down;
-      fill: $grey-main2;
-    }
+  .text-up-dark {
+    @extend .text-up;
+    fill: $white-main;
+  }
+
+  .text-down-dark {
+    @extend .text-down;
+    fill: $grey-main2;
+  }
 }
 
-
-.main__text-mobile{
+.main__text-mobile {
   margin-bottom: 1rem;
   display: flex;
   justify-content: center;
@@ -133,23 +171,22 @@
 
 .main__text-mobile-dark > * {
   font-family: $main-text1;
-  color:$white-main;
+  color: $white-main;
   font-size: 2rem;
   display: flex;
   justify-content: center;
-  
 }
 
-.main__text-mobile-dark{
+.main__text-mobile-dark {
   margin-bottom: 1rem;
 }
 
-.main__text-mobile-text-up-container{
-  display: flex; 
+.main__text-mobile-text-up-container {
+  display: flex;
   position: relative;
 }
 
-.main__text-mobile-text-up{
+.main__text-mobile-text-up {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -157,7 +194,7 @@
 }
 
 .main__text-mobile-text-up-dark > * {
-  color:$white-main;
+  color: $white-main;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -179,14 +216,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #6D6D6D;
+  color: #6d6d6d;
 }
-
 
 // SVG
 
-.blob-1{
-  background-color:$blob-main;
+.blob-1 {
+  background-color: $blob-main;
 }
 
 .wave {
@@ -194,7 +230,7 @@
   height: 100%;
   top: 0;
   left: 0;
-  position: fixed; 
+  position: fixed;
 }
 
 .wave-dark {
@@ -202,46 +238,44 @@
   height: 100%;
   top: 0;
   left: 0;
-  position: fixed; 
+  position: fixed;
 }
 
-
-
-.globe, .globe__sliced {
+.globe,
+.globe__sliced {
   position: fixed;
-  top:40%;
+  top: 40%;
   left: 20%;
   transform: translate(-5%);
   width: 25%;
   height: 25%;
   z-index: 1;
-    .day-side{
-      fill:$green-light1;
-    }
-    .oceans-night{
-      fill: $blue-dark1;
-    }
+  .day-side {
+    fill: $green-light1;
+  }
+  .oceans-night {
+    fill: $blue-dark1;
+  }
 
-    .land-night{
-      fill: $green-light2;
-    }
+  .land-night {
+    fill: $green-light2;
+  }
 
-    .land-day{
-      fill:$green-light3;
-    }
+  .land-day {
+    fill: $green-light3;
+  }
 }
-
 
 .moon {
-position: fixed;
-top: 25%;
-left: 30%;
-width: 8.5%;
-height: 8.5%;
-z-index:1;
-.light-effect:hover {
-  box-shadow: 4px 5px 38px 3px rgba(255,248,28,0.79)
-}
+  position: fixed;
+  top: 25%;
+  left: 30%;
+  width: 8.5%;
+  height: 8.5%;
+  z-index: 1;
+  .light-effect:hover {
+    box-shadow: 4px 5px 38px 3px $yellow;
+  }
 }
 
 .stethoscope {
@@ -260,39 +294,35 @@ z-index:1;
   top: 0.625rem;
   left: 11rem;
 
-  .stethoscope__mobile{
+  .stethoscope__mobile {
     width: 100;
     height: auto;
   }
 }
 
-
-
 // TABS-COLLAPSE
 
 .country__flag {
+  .ant-collapse-content-box {
+    display: flex;
+    justify-content: center;
 
-   .ant-collapse-content-box {
-     display: flex;
-     justify-content: center;
-
-      img {
-         width: 50%;
-   }
-   }
-
+    img {
+      width: 50%;
+    }
+  }
 }
 
 .country__photo {
   img {
-  width: 100%;
-  height: 100%; 
+    width: 100%;
+    height: 100%;
   }
 
   .slick-dots {
-   color: red;
-    .slick-active{
-      color: blue;
+    color: $wave-main;
+    .slick-active {
+      color: $blue;
     }
   }
 }
@@ -302,11 +332,10 @@ z-index:1;
 .map__main {
   position: relative;
   top: 0;
-  left: 0;  
-  background: url('../assets/bg-gradient-wave.png') repeat center / cover;
+  left: 0;
+  background: url("../assets/bg-gradient-wave.png") repeat center / cover;
   height: 100vh;
   width: 100vw;
-
 
   .map__wrapper {
     position: relative;
@@ -317,13 +346,12 @@ z-index:1;
     svg {
       width: 100%;
       height: auto;
-     
     }
     .search-input {
       display: flex;
-      position: fixed; 
-      top:90%;
-      left:1.5rem;
+      position: fixed;
+      top: 90%;
+      left: 1.5rem;
       width: 300px;
 
       .ant-select {
@@ -333,15 +361,16 @@ z-index:1;
   }
 }
 
-[class^="ant-select"] > *{
+[class^="ant-select"] > * {
   font-family: $main-text1;
 }
 
-
 .map__main-dark {
   @extend .map__main;
-  background: url('../assets/wave-darkmode.png') repeat center  / cover;
-
+  background: url("../assets/wave-darkmode.png") repeat center / cover;
 }
 
 
+.search-input {
+  margin: 0 auto;
+}
