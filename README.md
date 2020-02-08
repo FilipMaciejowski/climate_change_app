@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 
 https://filipmaciejowski.github.io/Climate_Change_App
 
