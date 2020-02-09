@@ -1,24 +1,22 @@
-import React from 'react';
+import React from "react";
 import { Spin } from "antd";
-import './style.scss';
+import "./style.scss";
 
-
-const Loader = ({ minHeight, minWidth}) => {
-
+const Loader = ({ minHeight, minWidth }) => {
   let styles = {};
 
   if (minHeight) {
-    styles.minHeight = minHeight
+    styles.minHeight = minHeight;
   }
   if (minWidth) {
-    styles.minWidth = minWidth
+    styles.minWidth = minWidth;
   }
 
   return (
     <div className="loader" style={styles}>
       <Spin size="large" />
     </div>
-  )
+  );
 };
 
 export default Loader;

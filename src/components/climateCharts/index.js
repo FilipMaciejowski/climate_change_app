@@ -1,9 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import Loader from "../loader";
-import Highcharts from 'highcharts'
-import HighchartsReact from 'highcharts-react-official'
+import Highcharts from "highcharts";
+import HighchartsReact from "highcharts-react-official";
 
-const ClimateCharts = ({ getClimateData, status, climateData, countryName }) => {
+const ClimateCharts = ({
+  getClimateData,
+  status,
+  climateData,
+  countryName
+}) => {
   const [currentStatus, setCurrentStatus] = useState(status);
   const [currentClimateData, setCurrentClimateData] = useState(climateData);
   const [chartSeries, setChartSeries] = useState([]);
@@ -27,27 +32,29 @@ const ClimateCharts = ({ getClimateData, status, climateData, countryName }) => 
 
   const setSeries = () => {
     const chartSeriesData = [];
-    climateData.data.forEach((decade) => {
-      chartSeriesData.push(decade.data)
+    climateData.data.forEach(decade => {
+      chartSeriesData.push(decade.data);
     });
     setChartSeries(chartSeriesData);
   };
 
   const setYears = () => {
     const years = [];
-    climateData.data.forEach((decade) => {
-      years.push(decade.year)
+    climateData.data.forEach(decade => {
+      years.push(decade.year);
     });
-    setChartYears(years)
+    setChartYears(years);
   };
 
-  const calculateDifferenceTemperature = (temperature) => {
-    const currentTemperatureArrIndex = chartSeries.findIndex(t => t === temperature);
+  const calculateDifferenceTemperature = temperature => {
+    const currentTemperatureArrIndex = chartSeries.findIndex(
+      t => t === temperature
+    );
     const previousTemperature = chartSeries[currentTemperatureArrIndex - 1];
     if (previousTemperature) {
       return (temperature - previousTemperature).toFixed(3);
     } else {
-      return '-'
+      return "-";
     }
   };
 
@@ -66,26 +73,32 @@ const ClimateCharts = ({ getClimateData, status, climateData, countryName }) => 
 
                   yAxis: {
                     title: {
-                      text: 'Temperature (°C)'
+                      text: "Temperature (°C)"
                     }
                   },
                   xAxis: {
-                    categories: chartYears,
+                    categories: chartYears
                   },
 
-                  series: [{
-                    name: 'Decade',
-                    data: chartSeries
-                  }],
+                  series: [
+                    {
+                      name: "Decade",
+                      data: chartSeries
+                    }
+                  ],
 
                   tooltip: {
-                    backgroundColor: '#FCFFC5',
-                    borderColor: 'black',
+                    backgroundColor: "#FCFFC5",
+                    borderColor: "black",
                     borderRadius: 10,
                     borderWidth: 1,
                     formatter: function() {
-                      return 'Temperature ' + this.y.toFixed(3) +
-                        '<br/> Temperature difference ' + calculateDifferenceTemperature(this.y);
+                      return (
+                        "Temperature " +
+                        this.y.toFixed(3) +
+                        "<br/> Temperature difference " +
+                        calculateDifferenceTemperature(this.y)
+                      );
                     }
                   }
                 }}
@@ -99,7 +112,7 @@ const ClimateCharts = ({ getClimateData, status, climateData, countryName }) => 
         <Loader minHeight={300} />
       )}
     </>
-  )
+  );
 };
 
 export default ClimateCharts;

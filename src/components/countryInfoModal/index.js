@@ -1,14 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import { Button, Modal } from "antd";
 import DisplayImages from "../displayImages";
 import Loader from "../loader";
-import { Tabs } from 'antd';
+import { Tabs } from "antd";
 import CountryDetails from "../countryDetails";
 import ClimateCharts from "../climateCharts";
 
-
-
-const CountryInfoModal = ({ formOpen, country, closeModal, getImagesURL, status, getDetails, getClimateData, mode }) => {
+const CountryInfoModal = ({
+  formOpen,
+  country,
+  closeModal,
+  getImagesURL,
+  status,
+  getDetails,
+  getClimateData,
+  mode
+}) => {
   const [currentStatus, setCurrentStatus] = useState(status);
   useEffect(() => {
     setCurrentStatus(status);
@@ -34,18 +41,15 @@ const CountryInfoModal = ({ formOpen, country, closeModal, getImagesURL, status,
       footer={[
         <button className="modal__btn" key="back" onClick={() => closeModal()}>
           Cancel
-        </button>,
+        </button>
       ]}
-      
     >
       <Tabs defaultActiveKey="1">
         <TabPane tab="Images" key="1">
           {currentStatus === "FULFILLED" ? (
             renderLocation(getImagesURL())
           ) : (
-            <Loader
-              minHeight={300}
-            />
+            <Loader minHeight={300} />
           )}
         </TabPane>
         <TabPane tab="Details" key="2">
@@ -65,7 +69,7 @@ const CountryInfoModal = ({ formOpen, country, closeModal, getImagesURL, status,
         </TabPane>
       </Tabs>
     </Modal>
-  )
+  );
 };
 
 export default CountryInfoModal;

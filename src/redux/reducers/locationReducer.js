@@ -1,4 +1,10 @@
-import { ADD_COUNTRY, ADD_TEST, FETCH_INFO_ABOUT_COUNTRY, FETCH_CLIMATE_DATA, SET_MODE } from "../types";
+import {
+  ADD_COUNTRY,
+  ADD_TEST,
+  FETCH_INFO_ABOUT_COUNTRY,
+  FETCH_CLIMATE_DATA,
+  SET_MODE
+} from "../types";
 
 const initialState = {
   country: {
@@ -10,7 +16,7 @@ const initialState = {
   },
   mode: null,
   status: "",
-  location: {},
+  location: {}
 };
 
 export const location = (state = initialState, action) => {

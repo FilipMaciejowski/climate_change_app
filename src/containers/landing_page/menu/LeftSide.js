@@ -1,5 +1,4 @@
-import React from 'react';
-
+import React from "react";
 
 /* preserveAspectRatio = "none";
 fill = "none";
@@ -8,9 +7,6 @@ xmlns = "http://www.w3.org/2000/svg";
 className = "wave"; */
 
 const LeftSide = ({ setMode, switchValue }) => {
-
-  
-
   return (
     <aside className="left__side">
       {switchValue && (
@@ -323,6 +319,6 @@ const LeftSide = ({ setMode, switchValue }) => {
       </svg>
     </aside>
   );
-}
+};
 
-export default LeftSide; 
+export default LeftSide;

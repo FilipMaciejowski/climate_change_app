@@ -102,6 +102,7 @@
 // TABS-COLLAPSE
 
 .country__flag {
+
   .ant-collapse-content-box {
     display: flex;
     justify-content: center;
@@ -111,6 +112,10 @@
     }
   }
 }
+
+sup {
+      font-size: 0.7rem;
+    }
 
 .country__photo {
   img {
@@ -125,8 +130,6 @@
     }
   }
 }
-
-
 
 // CHARTS
 

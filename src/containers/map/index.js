@@ -1,14 +1,19 @@
 import React, { useEffect, useState, useRef } from "react";
-import { Link } from 'react-router-dom';
-import ReactTooltip from 'react-tooltip';
-import { addCountry, fetchClimateData, fetchCountryData, fetchImages, setTheme } from '../../redux/actions';
-import { useDispatch, useSelector } from 'react-redux';
+import { Link } from "react-router-dom";
+import ReactTooltip from "react-tooltip";
+import {
+  addCountry,
+  fetchClimateData,
+  fetchCountryData,
+  fetchImages,
+  setTheme
+} from "../../redux/actions";
+import { useDispatch, useSelector } from "react-redux";
 import MapRender from "../../components/mapRender";
 import CountryInfoModal from "../../components/countryInfoModal";
-import data from '../../constans/mapData'
+import data from "../../constans/mapData";
 
 const geoData = data;
-
 
 const MapPage = () => {
   const dispatch = useDispatch();
@@ -18,22 +23,21 @@ const MapPage = () => {
   const mapRef = useRef(); //  useRef() from react anables to fire a function from a child component at the parents level
 
   const { location, status, country, mode } = useSelector(
-    (state) => state.location
+    state => state.location
   );
 
   useEffect(() => {
     setCountryNames(getCountryNames(geoData));
-    setStartTheme()
+    setStartTheme();
   }, []);
-
 
   const setStartTheme = () => {
     const currentHour = new Date().getHours();
     if (mode === null) {
-      if(currentHour < 8 || currentHour > 16) {
-        dispatch(setTheme(true))
+      if (currentHour < 8 || currentHour > 16) {
+        dispatch(setTheme(true));
       } else {
-        dispatch(setTheme(false))
+        dispatch(setTheme(false));
       }
     }
   };
@@ -46,7 +50,7 @@ const MapPage = () => {
 
   const closeModal = () => {
     setFormOpen(false);
-    mapRef.current.callResetData()
+    mapRef.current.callResetData();
   };
 
   const getImages = country => {
@@ -64,18 +68,20 @@ const MapPage = () => {
   const getImagesURL = () => {
     const arrayURL = [];
     location.data.hits.forEach((img, index) => {
-      if(index <= 3){
+      if (index <= 3) {
         arrayURL.push(img.largeImageURL);
       }
     });
     return arrayURL;
   };
 
-  const getCountryNames = (mapData) => {
+  const getCountryNames = mapData => {
     const namesArray = [];
-    mapData.objects.ne_110m_admin_0_countries.geometries.forEach(countryData => {
-      namesArray.push(countryData.properties.NAME)
-    });
+    mapData.objects.ne_110m_admin_0_countries.geometries.forEach(
+      countryData => {
+        namesArray.push(countryData.properties.NAME);
+      }
+    );
     return namesArray;
   };
 
@@ -134,7 +140,4 @@ const MapPage = () => {
   );
 };
 
-
-
 export default MapPage;
-

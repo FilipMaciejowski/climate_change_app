@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from "react";
 import Loader from "../loader";
 import { Collapse } from "antd";
 
@@ -7,12 +7,11 @@ const { Panel } = Collapse;
 const CountryDetails = ({ status, details, getDetails }) => {
   const [currentStatus, setCurrentStatus] = useState(status);
   const [currentDetails, setCurrentDetails] = useState(details);
-  const units = [" milions", "k km2"];
+  const units = [" milions", "k km"];
 
   useEffect(() => {
     getDetails();
   }, []);
-
 
   useEffect(() => {
     setCurrentStatus(status);
@@ -23,9 +22,11 @@ const CountryDetails = ({ status, details, getDetails }) => {
   }, [details]);
 
   const convertNumber = (number, typeData) => {
-      return typeData ? Math.round(number / 100000) / 10 + units[0] : Math.round(number / 100) / 10 + units[1];
-  }
-  
+    return typeData
+      ? Math.round(number / 100000) / 10 + units[0]
+      : Math.round(number / 100) / 10 + units[1];
+  };
+
   return (
     <>
       {currentStatus === "FULFILLED" ? (
@@ -45,7 +46,7 @@ const CountryDetails = ({ status, details, getDetails }) => {
                   <p>{currentDetails.data[0].capital}</p>
                 </Panel>
                 <Panel header="Area" key="4">
-                  <p>{convertNumber(currentDetails.data[0].area, false)}</p>
+                  <p>{convertNumber(currentDetails.data[0].area, false)}<sup>2</sup></p>
                 </Panel>
               </Collapse>
             </div>

@@ -5,9 +5,8 @@ import {
   FETCH_CLIMATE_DATA,
   SET_MODE
 } from "../types";
-import apiConst from '../../constans/api.constans';
-import axios from 'axios';
-
+import apiConst from "../../constans/api.constans";
+import axios from "axios";
 
 export const addCountry = (shortName, countryName, countryNameIso3) => {
   return {
@@ -20,9 +19,7 @@ export const addCountry = (shortName, countryName, countryNameIso3) => {
   };
 };
 
-
 export const fetchImages = country => {
-
   // dispatch({type: ADD_TEST_PENDING})
   // axios.get(
   //     `${apiConst.imagesApiUrl}${apiConst.imagesApiKey}&q=landscape+nature+${country}&image_type=photo`
@@ -39,7 +36,7 @@ export const fetchImages = country => {
   return {
     type: ADD_TEST,
     payload: axios.get(
-      `${apiConst.imagesApiUrl}${apiConst.imagesApiKey}&q=landscape+nature+${country}&image_type=photo` // thanks to applyMiddleware we are able to put api request right into payload! 
+      `${apiConst.imagesApiUrl}${apiConst.imagesApiKey}&q=landscape+nature+${country}&image_type=photo` // thanks to applyMiddleware we are able to put api request right into payload!
     )
   };
 };
@@ -47,18 +44,14 @@ export const fetchImages = country => {
 export const fetchCountryData = country => {
   return {
     type: FETCH_INFO_ABOUT_COUNTRY,
-    payload: axios.get(
-      `${apiConst.infoAboutCountryApiUrl}${country}`
-    )
+    payload: axios.get(`${apiConst.infoAboutCountryApiUrl}${country}`)
   };
 };
 
 export const fetchClimateData = country => {
   return {
     type: FETCH_CLIMATE_DATA,
-    payload: axios.get(
-      `${apiConst.climateDataApiUrl}${country}`
-    )
+    payload: axios.get(`${apiConst.climateDataApiUrl}${country}`)
   };
 };
 
