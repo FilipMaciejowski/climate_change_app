@@ -14,7 +14,7 @@ import store from "./redux/store";
 const App = () => {
   return (
     <Provider store={store}>
-      <Router>
+      <Router basename={window.window.location.pathname || ''}>
         <Switch>
           <Route exact path="/" component={LandingPage} />
           <Route path="/story" component={Story} />
