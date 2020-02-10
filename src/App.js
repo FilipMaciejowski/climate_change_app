@@ -11,7 +11,7 @@ import Story from "./containers/story/index";
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/">
       <Switch>
         <Route exact path="/" component={LandingPage} />
         <Route path="/story" component={Story} />
