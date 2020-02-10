@@ -3,16 +3,16 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import "antd/dist/antd.css";
 import "./scss/main.scss";
-import store from "./redux/store";
+/* import store from "./redux/store";
 import { Provider } from "react-redux";
-import { BrowserRouter } from "react-router-dom";
-
-const app = (
+import { HashRouter } from "react-router-dom";
+ */
+/* const App = (
   <Provider store={store}>
-    <BrowserRouter>
+    <HashRouter>
       <App />
-    </BrowserRouter>
+    </HashRouter>
   </Provider>
-);
+); */
 
-ReactDOM.render(app, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById("root"));
