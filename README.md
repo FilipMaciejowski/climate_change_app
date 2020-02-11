@@ -1,6 +1,6 @@
 
 
-https://filipmaciejowski.github.io/Climate_Change_App
+https://filipmaciejowski.github.io/climate_change_app
 
 ## Available Scripts
 
