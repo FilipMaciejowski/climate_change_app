@@ -1,7 +1,7 @@
 import React from "react";
 import {
   Switch,
-  HashRouter as Router,
+  HashRouter,
   Route,
   Redirect
 } from "react-router-dom";
@@ -14,14 +14,14 @@ import store from "./redux/store";
 const App = () => {
   return (
     <Provider store={store}>
-      <Router basename={window.window.location.pathname || ''}>
+      <HashRouter basename={window.window.location.pathname || ''}>
         <Switch>
           <Route exact path="/" component={LandingPage} />
           <Route path="/story" component={Story} />
           <Route path="/map" component={MapPage} />
-          <Redirect path="*" to="/" />
+          {/* <Redirect path="*" to="/" /> */}
         </Switch>
-      </Router>
+      </HashRouter>
     </Provider>
   );
 };
