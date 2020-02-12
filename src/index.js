@@ -8,11 +8,13 @@ import { Provider } from "react-redux";
 import { HashRouter } from "react-router-dom";
 
 const app = (
+  <>
   <Provider store={store}>
     <HashRouter>
       <App />
     </HashRouter>
   </Provider>
+  </>
 );
 
 ReactDOM.render(app, document.getElementById("root"));

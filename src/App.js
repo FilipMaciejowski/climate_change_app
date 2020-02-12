@@ -3,7 +3,7 @@ import {
   Switch,
   HashRouter,
   Route,
- /*  Redirect */
+  Redirect
 } from "react-router-dom";
 import LandingPage from "./containers/landing_page/index";
 import MapPage from "./containers/map/index";
@@ -13,16 +13,18 @@ import store from "./redux/store";
 
 const App = () => {
   return (
+    <>
     <Provider store={store}>
       <HashRouter /* basename={window.window.location.pathname || ''} */>
         <Switch>
           <Route exact path="/" component={LandingPage} />
           <Route path="/story" component={Story} />
           <Route path="/map" component={MapPage} />
-          {/* <Redirect path="*" to="/" /> */}
+          {<Redirect path="*" to="/" />}
         </Switch>
       </HashRouter>
     </Provider>
+    </>
   );
 };
 
