@@ -1,4 +1,4 @@
-# CLIMAT
+# CLIMATE´S STETHOSCOPE
 
 https://filipmaciejowski.github.io/climate_change_app
 
