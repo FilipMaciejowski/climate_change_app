@@ -15,12 +15,12 @@ const App = () => {
   return (
     <>
     <Provider store={store}>
-      <HashRouter /* basename={window.window.location.pathname || ''} */>
+      <HashRouter basename={`${process.env.PUBLIC_URL}`}/* basename={window.window.location.pathname || ''} */>
         <Switch>
           <Route exact path="/" component={LandingPage} />
           <Route path="/story" component={Story} />
           <Route path="/map" component={MapPage} />
-          {<Redirect path="*" to="/" />}
+          <Redirect path="*" to="/" />
         </Switch>
       </HashRouter>
     </Provider>
