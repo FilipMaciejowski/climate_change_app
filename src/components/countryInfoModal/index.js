@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button, Modal } from "antd";
+import { Modal } from "antd";
 import DisplayImages from "../displayImages";
 import Loader from "../loader";
 import { Tabs } from "antd";

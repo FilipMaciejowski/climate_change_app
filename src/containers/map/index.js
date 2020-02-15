@@ -129,9 +129,9 @@ const MapPage = () => {
             <path
               d="M14 37L42 11L70 37"
               stroke="#6B5B4B"
-              stroke-width="2"
-              stroke-miterlimit="10"
-              stroke-linecap="round"
+              strokeWidth="2"
+              strokeMiterlimit="10"
+              strokeLinecap="round"
             />
           </svg>
         }
