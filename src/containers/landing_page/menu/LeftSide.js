@@ -11,7 +11,7 @@ const LeftSide = ({ setMode, switchValue }) => {
     <aside className="left__side">
       {switchValue && (
         <svg
-          xmlns="http://www.w3.org/2000/svg"
+          
           viewBox="0 0 480 480"
           className="moon"
         >
