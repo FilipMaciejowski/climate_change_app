@@ -7,10 +7,7 @@ const RightSide = ({ switchValue }) => {
     history.push(route);
   };
 
-  /* const changeRoute2 = () => {
-    history.push("/map");
-  }; */
-
+  
   return (
     <aside className="right__side">
       <div className="right__side-content">
