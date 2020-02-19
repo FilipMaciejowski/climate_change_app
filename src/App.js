@@ -15,7 +15,7 @@ const App = () => {
   return (
     <>
     <Provider store={store}>
-      <HashRouter basename={`${process.env.PUBLIC_URL}`}/* basename={window.window.location.pathname || ''} */>
+      <HashRouter /* basename={`${process.env.PUBLIC_URL}`} *//* basename={window.window.location.pathname || ''} */>
         <Switch>
           <Route exact path="/" component={LandingPage} />
           <Route path="/story" component={Story} />
