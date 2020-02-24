@@ -2,7 +2,7 @@
   "name": "final-project",
   "version": "0.1.0",
   "private": false,
-  "homepage": "https://filipmaciejowski.github.io/climate_change_app/",
+  clkea
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",
