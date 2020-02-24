@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/static/css/main.c3b4959d.chunk.css",
-    "main.js": "/static/js/main.af3e669e.chunk.js",
-    "main.js.map": "/static/js/main.af3e669e.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.b6dcde93.js",
-    "runtime-main.js.map": "/static/js/runtime-main.b6dcde93.js.map",
-    "static/css/2.4c9c5ea8.chunk.css": "/static/css/2.4c9c5ea8.chunk.css",
-    "static/js/2.1e19c5ba.chunk.js": "/static/js/2.1e19c5ba.chunk.js",
-    "static/js/2.1e19c5ba.chunk.js.map": "/static/js/2.1e19c5ba.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.23565d5678ccc34fb71bbde67b869eeb.js": "/precache-manifest.23565d5678ccc34fb71bbde67b869eeb.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/2.4c9c5ea8.chunk.css.map": "/static/css/2.4c9c5ea8.chunk.css.map",
-    "static/css/main.c3b4959d.chunk.css.map": "/static/css/main.c3b4959d.chunk.css.map",
-    "static/js/2.1e19c5ba.chunk.js.LICENSE.txt": "/static/js/2.1e19c5ba.chunk.js.LICENSE.txt",
-    "static/media/main.scss": "/static/media/wave-darkmode.d062787c.png"
+    "main.css": "/climate_change_app/static/css/main.5257a5e2.chunk.css",
+    "main.js": "/climate_change_app/static/js/main.af3e669e.chunk.js",
+    "main.js.map": "/climate_change_app/static/js/main.af3e669e.chunk.js.map",
+    "runtime-main.js": "/climate_change_app/static/js/runtime-main.4f9e3b37.js",
+    "runtime-main.js.map": "/climate_change_app/static/js/runtime-main.4f9e3b37.js.map",
+    "static/css/2.4c9c5ea8.chunk.css": "/climate_change_app/static/css/2.4c9c5ea8.chunk.css",
+    "static/js/2.26cdc7e4.chunk.js": "/climate_change_app/static/js/2.26cdc7e4.chunk.js",
+    "static/js/2.26cdc7e4.chunk.js.map": "/climate_change_app/static/js/2.26cdc7e4.chunk.js.map",
+    "index.html": "/climate_change_app/index.html",
+    "precache-manifest.32470d864f80a60ac88ed5d38d0b3d36.js": "/climate_change_app/precache-manifest.32470d864f80a60ac88ed5d38d0b3d36.js",
+    "service-worker.js": "/climate_change_app/service-worker.js",
+    "static/css/2.4c9c5ea8.chunk.css.map": "/climate_change_app/static/css/2.4c9c5ea8.chunk.css.map",
+    "static/css/main.5257a5e2.chunk.css.map": "/climate_change_app/static/css/main.5257a5e2.chunk.css.map",
+    "static/js/2.26cdc7e4.chunk.js.LICENSE.txt": "/climate_change_app/static/js/2.26cdc7e4.chunk.js.LICENSE.txt",
+    "static/media/main.scss": "/climate_change_app/static/media/wave-darkmode.d062787c.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.b6dcde93.js",
+    "static/js/runtime-main.4f9e3b37.js",
     "static/css/2.4c9c5ea8.chunk.css",
-    "static/js/2.1e19c5ba.chunk.js",
-    "static/css/main.c3b4959d.chunk.css",
+    "static/js/2.26cdc7e4.chunk.js",
+    "static/css/main.5257a5e2.chunk.css",
     "static/js/main.af3e669e.chunk.js"
   ]
 }
