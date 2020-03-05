@@ -2,7 +2,7 @@
 
 https://filipmaciejowski.github.io/climate_change_app
 
-# Full functionality of the temperature charts anable with Safari.
+#### Full functionality of the temperature charts anable with Safari.
 Due to `http` API request for http://datahelpdesk.worldbank.org/knowledgebase/articles/902061-climate-data-apideclined declined via Chrome, Brave and Mozilla. 
 
 ## Available Scripts
