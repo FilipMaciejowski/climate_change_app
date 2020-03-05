@@ -2,6 +2,9 @@
 
 https://filipmaciejowski.github.io/climate_change_app
 
+## Full functionality with Safari.
+Due to `http` API request for http://datahelpdesk.worldbank.org/knowledgebase/articles/902061-climate-data-apideclined declined via Chrome, Brave and Mozilla. 
+
 ## Available Scripts
 
 In the project directory, you can run:
