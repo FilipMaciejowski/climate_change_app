@@ -2,7 +2,7 @@
   "name": "final-project",
   "version": "0.1.0",
   "private": false,
-  "home-page": "https://filipmaciejowski.github.io/climate_change_app/",
+  "homepage": "https://filipmaciejowski.github.io/climate_change_app/",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",
@@ -27,15 +27,7 @@
     "redux-thunk": "^2.3.0",
     "reset-css": "^5.0.1",
     "scripts": "^0.1.0",
-    "styled-components": "^5.0.0",
-     "autoprefixer": "^9.7.4",
-    "cross-env": "^7.0.0",
-    "gh-pages": "^2.2.0",
-    "postcss-loader": "^3.0.0",
-    "react-scripts": "^3.4.0",
-    "redux-promise-middleware": "^6.1.2",
-    "style-loader": "^1.1.2",
-    "underscore": "^1.9.2"
+    "styled-components": "^5.0.0"
   },
   "scripts": {
     "start": "cross-env AUTOPREFIXER_GRID=autoplace react-scripts start",
@@ -63,5 +55,15 @@
       "last 1 safari version",
       "last 1 ie version"
     ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.7.4",
+    "cross-env": "^7.0.0",
+    "gh-pages": "^2.2.0",
+    "postcss-loader": "^3.0.0",
+    "react-scripts": "^3.4.0",
+    "redux-promise-middleware": "^6.1.2",
+    "style-loader": "^1.1.2",
+    "underscore": "^1.9.2"
   }
 }
