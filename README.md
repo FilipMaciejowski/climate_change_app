@@ -1,5 +1,7 @@
 # CLIMATE´S STETHOSCOPE
 
+[![Coverage Status]
+
 
 ### `npm install / i`
 
