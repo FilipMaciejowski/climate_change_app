@@ -1,6 +1,6 @@
 # CLIMATE´S STETHOSCOPE
 
-[![Coverage Status]
+[![Coverage Status](https://coveralls.io/github/taniarascia/chip8?branch=master)
 
 
 ### `npm install / i`
