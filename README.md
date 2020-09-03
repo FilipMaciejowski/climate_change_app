@@ -10,11 +10,11 @@ A one-page React.js application for tracking temperature changes with truly resp
 
 ## Techlonogy stack:
 
-- JavaScript
-- React.js
-- Sass
-- Redux
-- SVG animations
+- **JavaScript**
+- **React.js**
+- **Sass**
+- **Redux**
+- **SVG animations**
 
 ## Features:
 
