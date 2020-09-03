@@ -1,5 +1,7 @@
 # CLIMATE´S STETHOSCOPE
 
+<img src=ClimateStethoscope>
+
 ## Techlonogy stack
 
 - React.js
