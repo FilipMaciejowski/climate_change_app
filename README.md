@@ -1,4 +1,4 @@
-# CLIMATE´S STETHOSCOPE 🩺 🌍
+# CLIMATE´S STETHOSCOPE 🩺 
 
 <div align="center">
 <img width="99.5%" src=ClimateStethoscope.png>
@@ -11,6 +11,11 @@
 - Sass
 - Redux
 - SVG animations
+
+## Features:
+
+- shows charts of temperature change in the course of century 
+- an additional basic info about each country available  
 
 ``` npm install ```
 
