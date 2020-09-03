@@ -1,10 +1,11 @@
-# CLIMATE´S STETHOSCOPE
+# CLIMATE´S STETHOSCOPE 🩺 🌍
+
 <div align="center">
 <img width="99.5%" src=ClimateStethoscope.png>
 <img height="75%" width="49.5%" src=ClimateStethoscope3.png> <img height="75%" width="49.5%" src=ClimateStethoscope2.png>
 </div>
 
-## Techlonogy stack
+## Techlonogy stack:
 
 - React.js
 - Sass
@@ -15,7 +16,7 @@
 
 Installs node_modules in your IDE 
 
-```npm start```
+``` npm start```
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
