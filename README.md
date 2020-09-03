@@ -1,6 +1,6 @@
 # CLIMATE´S STETHOSCOPE
 
-<img src=ClimateStethoscope>
+<img src=ClimateStethoscope.png>
 
 ## Techlonogy stack
 
