@@ -15,7 +15,8 @@
 ## Features:
 
 - shows charts of temperature change in the course of century 
-- an additional basic info about each country available  
+- an additional basic info about each country available 
+- beautiful SVG animations and SVG-responsive text
 
 ``` npm install ```
 
