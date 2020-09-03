@@ -7,11 +7,11 @@
 - Redux
 - SVG animations
 
-``bash npm install ```
+```bash npm install ```
 
 Installs node_modules in your IDE 
 
-``` bash npm start`
+``` bash npm start```
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
