@@ -1,6 +1,6 @@
 # CLIMATE´S STETHOSCOPE
 <div align="center">
-<img width="99%" src=ClimateStethoscope.png>
+<img width="99.5%" src=ClimateStethoscope.png>
 <img height="75%" width="49.5%" src=ClimateStethoscope3.png> <img height="75%" width="49.5%" src=ClimateStethoscope2.png>
 </div>
 
