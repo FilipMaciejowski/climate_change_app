@@ -5,6 +5,9 @@
 <img height="75%" width="49.5%" src=ClimateStethoscope3.png> <img height="75%" width="49.5%" src=ClimateStethoscope2.png>
 </div>
 
+## Description: 
+A one-page React.js application for tracking temperature changes with truly responsive SVG text and map.
+
 ## Techlonogy stack:
 
 - JavaScript
