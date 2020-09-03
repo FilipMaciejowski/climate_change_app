@@ -1,7 +1,7 @@
 # CLIMATE´S STETHOSCOPE
 <div align="center">
 <img align="center" src=ClimateStethoscope.png>
-<img width="45%" src=ClimateStethoscope3.png> <img width="45%" src=ClimateStethoscope2.png>
+<img margin-top="1rem" width="50%" src=ClimateStethoscope3.png> <img  margin-top="1rem" width="50%" src=ClimateStethoscope2.png>
 </div>
 
 ## Techlonogy stack
