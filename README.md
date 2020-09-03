@@ -21,6 +21,7 @@ A one-page React.js application for tracking temperature changes with truly resp
 - shows charts of temperature change in the course of century 
 - an additional basic info about each country available 
 - beautiful SVG animations and SVG-responsive text
+- API calls diplayed in the UI layer
 
 ``` npm install ```
 
