@@ -7,6 +7,7 @@
 
 ## Techlonogy stack:
 
+- JavaScript
 - React.js
 - Sass
 - Redux
